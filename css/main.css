@@ -12,9 +12,7 @@
 
 html {
     font-family: Arial,'Microsoft Yahei';
-    font-size: 12px;
     line-height: 1.4;
-    color: 333;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -25,17 +23,19 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #7c8;
+    color: #666;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #7c8;
+    color: #666;
     text-shadow: none;
 }
 
 /*
- * A better looking default horizontal rule
+ * 美化水平分割线
  */
 
 hr {
@@ -48,9 +48,75 @@ hr {
 }
 
 /*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
+ * 美化字体间隔
+ */
+
+.spacing-tiny {
+    text-indent: .03em;
+    letter-spacing: .03em;
+}
+.spacing-small {
+    text-indent: .1em;
+    letter-spacing: .1em;
+}
+.spacing-medium {
+    text-indent: .3em;
+    letter-spacing: .3em;
+}
+.spacing-large {
+    text-indent: .8em;
+    letter-spacing: .8em;
+}
+
+/*
+ * 对齐及浮动
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after {
+    clear: both;
+}
+
+.top,
+.left,
+.bottom,
+.right{
+    position: absolute;
+} 
+.top{
+    top: 0;
+}
+.left{
+    left: 0;
+}
+.bottom{
+    left: 0;
+}
+.right{
+    right: 0;
+}
+
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+
+/*
+ * 内联a标签填充
+ */
+.tap-link{
+    display: inline-block;
+}
+
+/*
+ * 调整以下元素使他们之间的差距减小，
+ * audio、canvas、iframes、images、videos和底部的容器。
  */
 
 audio,
@@ -63,7 +129,7 @@ video {
 }
 
 /*
- * Remove default fieldset styles.
+ * 删除默认控件组风格。
  */
 
 fieldset {
@@ -73,7 +139,7 @@ fieldset {
 }
 
 /*
- * Allow only vertical resizing of textareas.
+ * 只允许垂直方向的textarea的调整。
  */
 
 textarea {
@@ -81,7 +147,7 @@ textarea {
 }
 
 /* ==========================================================================
-   Browser Upgrade Prompt
+   浏览器升级提示 的样式
    ========================================================================== */
 
 .browserupgrade {
@@ -92,8 +158,100 @@ textarea {
 }
 
 /* ==========================================================================
-   pandaFront project styles.
+   熊猫旅行网站的主要样式
    ========================================================================== */
+
+html {
+    display: block;
+    font-size: 12px;
+    color: 333;
+}
+
+body {
+    font-family: Arial,"Lucida Grande","Microsoft Yahei","Hiragino Sans GB","Hiragino Sans GB W3",SimSun,"PingFang SC",STHeiti;
+    display: block;
+    overflow: hidden;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.w1200-box{
+    position: relative;
+    width: 100%;
+}
+.w1200{
+    min-width: 1200px;
+    width: 1200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#main-content{
+    display: block;
+}
+
+.main-panel{
+    display: block;
+}
+
+.header-panel{
+
+}
+
+.header-top{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    background-color: #f5f5f5;
+    font-size: 12px;
+}
+.top-login{
+    display: block;
+    color: #666;
+}
+.top-login > *{
+    display: inline-block;
+    margin-right: 18px;
+}
+.link-login a{
+    margin-right: 12px;
+}
+.sentence{
+    color: #aaa;
+    cursor: default;
+}
+.link-login{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.header-main{
+    display: block;
+    height: 144px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 2px solid #349039;
+}
+
+
+.content-panel{
+
+}
+
+.footer-panel{
+
+}
+
+
 
 
 
@@ -105,7 +263,7 @@ textarea {
    ========================================================================== */
 
 /*
- * Hide visually and from screen readers
+ * 在视觉上和屏幕阅读器中隐藏元素
  */
 
 .hidden {
@@ -156,27 +314,5 @@ textarea {
 
 .invisible {
     visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
 }
 
