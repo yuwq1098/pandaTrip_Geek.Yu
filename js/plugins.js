@@ -22,3 +22,18 @@
 }());
 
 // Place any jQuery/helper plugins in here.
+(function($){
+    $.fn.myJQPlugin = function() {  
+        // 没有必要使用$(this)  
+        // $(this) 跟 $($('#element'))是一样的   
+        this.html("Hello,world");
+        var $this = $(this);
+        this.click(function(){
+            $this.hide(); //注意这里的this不再指向jQuery元素，这里的this指向当前这个function对象
+        });
+    };
+    $.fn.mainFunc = function() {
+        var $el = $(this);
+        console.log($el);      
+    };  
+})(jQuery); 

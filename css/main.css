@@ -68,6 +68,20 @@ hr {
     letter-spacing: .8em;
 }
 
+/*字体图标*/
+.icon-tiny {
+    font-size: 14px;
+}
+.icon-small {
+    font-size: 19px;
+}
+.icon-medium {
+    font-size: 22px;
+}
+.icon-large {
+    font-size: 28px;
+}
+
 /*
  * 对齐及浮动
  */
@@ -115,6 +129,24 @@ hr {
 }
 
 /*
+ * 垂直布局 和 完全居中布局
+ */
+.vertical-layout{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.complete-center{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+/*
  * 调整以下元素使他们之间的差距减小，
  * audio、canvas、iframes、images、videos和底部的容器。
  */
@@ -153,7 +185,7 @@ textarea {
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
-    color: #000;
+    color: #313536;
     padding: 0.2em 0;
 }
 
@@ -164,7 +196,7 @@ textarea {
 html {
     display: block;
     font-size: 12px;
-    color: 333;
+    color: #313536;
 }
 
 body {
@@ -179,6 +211,27 @@ body {
 a{
     color: inherit;
     text-decoration: none;
+}
+
+p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+button{
+    cursor: pointer;
+}
+button,input{ 
+    outline: none; 
+}
+ul,li{
+    margin: 0; 
+    padding: 0; 
+    list-style: none;
+}
+
+em,i{
+    font-style: normal;
 }
 
 .w1200-box{
@@ -203,10 +256,12 @@ a{
 }
 
 .header-panel{
-
+    display: block;
 }
 
+/*顶部信息*/
 .header-top{
+    font-family: "宋体",Arial,'Microsoft Yahei';
     display: block;
     height: 30px;
     line-height: 30px;
@@ -214,32 +269,297 @@ a{
     background-color: #f5f5f5;
     font-size: 12px;
 }
-.top-login{
+.top-login,
+.top-support{
     display: block;
-    color: #666;
+    color: #777;
+    letter-spacing: .1em;
+    text-indent: .1em;
+    font-size: 13px;
+    cursor: default;
 }
 .top-login > *{
     display: inline-block;
-    margin-right: 18px;
+    margin-right: 12px;
 }
 .link-login a{
     margin-right: 12px;
 }
 .sentence{
-    color: #aaa;
+    color: #a5a5a5;
     cursor: default;
 }
 .link-login{
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 12px;
+}
+.link-support a{
+    margin-left: 8px;
+}
+.link-support i{
+    color: #a5a5a5;
+}
+.link-support i[data-icon='phone']{
+    display: inline-block;
+    color: #349039;
+    -webkit-transform: translateY(1px);
+    -moz-transform: translateY(1px);
+    transform: translateY(1px);
 }
 
+/*顶部主要内容*/
 .header-main{
     display: block;
     height: 144px;
     width: 100%;
     background-color: #fff;
     border-bottom: 2px solid #349039;
+}
+
+/*头部容器*/
+.head-wrap{
+    height: 100px;
+    position: relative;
+}
+.logo-wrap{
+    width: 250px;
+    height: 88px;
+}
+.logo-wrap img{
+    width: 100%;
+    height: 100%;
+}
+
+/*顶部搜索条*/
+.head-search{
+    width: 460px;
+    height: 38px;
+    border: 1px solid #313536;
+    color: #313536;
+}
+.head-search .dropdown-menu{
+    width: 88px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    padding-left: 5px; 
+    cursor: pointer;
+}
+.head-search .dropdown-menu >*{
+    cursor: pointer;
+}
+.dropdown-menu span{
+    font-size: 14px;
+}
+.dropdown-menu i{
+    font-size: 11px;
+}
+
+.head-search input[type='text']{
+    width: 305px;
+    height: 36px;
+    line-height: 32px;
+    right: 49px;
+    border: none;
+    padding: 0 12px 0 5px;
+    color: #313536;
+    font-size: 13px;
+}
+.head-search button{
+    right: 0;
+    border: none;
+    width: 48px;
+    color: #f5f5f5;
+    background-color: #313536;
+}
+
+/*服务热线*/
+.hotline-wrap{
+    width: 180px;
+    height: 54px;
+    right: 0;
+    padding-left: 55px;
+}
+.hotline-wrap img{
+    width: 39px;
+    height: 39px;
+    left: 5px;
+
+}
+.hotline-wrap p{
+    font-family: "宋体",Arial,'Microsoft Yahei';
+    margin-top: 2px;
+    line-height: 20px;
+    font-size: 13px;
+    color: #777;
+}
+.hotline-wrap em{
+    line-height: 30px;
+    color: #349039;
+    font-size: 26px;
+}
+
+/*头部导航区*/
+.head-navbar{
+    height: 44px;
+    position: relative;
+}
+
+/*定位信息（所属站点）*/
+.head-navbar .orientation{
+    width: 250px;
+    height: 46px;
+    line-height: 46px;
+    background-color: #313536;
+    color: #f5f5f5;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: -2px;
+}
+.head-navbar .orientation i{
+    font-size: 20px;
+    position: relative;
+    margin-right: 3px;
+    top: 2px;
+}
+.head-navbar .orientation em{
+    font-size: 17px;
+}
+
+/*导航条容器*/
+.head-navbar .navbar-wrap{
+    width: 950px;
+    height: 44px;
+    line-height: 44px;
+    left: 250px;
+    padding-left: 15px;
+    cursor: default;
+}
+.head-navbar .navbar-wrap li{
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    padding: 0 12px;
+    position: relative;
+}
+.head-navbar li.nav-words-2{
+    min-width: 58px;
+}
+.head-navbar li.nav-words-3{
+    min-width: 75px;
+}
+.head-navbar li.nav-words-4{
+    min-width: 90px;
+}
+.head-navbar .navbar-wrap a{
+    color: #313536;
+}
+
+.head-navbar .navbar-wrap li.active a{
+    color: #349039;
+}
+.head-navbar .navbar-wrap li.active::after{
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 4px solid #349039;
+    border-left: 4px solid #349039;
+    border-bottom: 4px solid transparent;
+    border-right: 4px solid transparent;
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    transform-origin: left bottom;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+
+}
+.carousel-panel{
+    width: 100%;
+    height: 426px;
+    overflow: hidden;
+    position: relative;
+}
+#index-carousel .swiper-wrapper{
+    height: 426px;
+}
+#index-carousel .swiper-pagination{
+    width: 150px;
+    position: absolute;
+    right: 0;
+    left: 1000px;
+    bottom: 0;
+    margin: 0 auto;
+    height: 32px;
+    text-align: right;
+    cursor: default;
+}
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: rgba(0,0,0,.30);
+    opacity: 1;
+    cursor: pointer;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: rgba(0,0,0,.55);
+}
+.carousel-panel .nav-func{
+    width: 250px;
+    height: 426px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 950px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.5);
+    z-index: 10;
+    color: #f5f5f5;
+}
+
+.nav-func .main-func{
+    width: 85px;
+    height: 100%;
+}
+
+.main-func li{
+    width: 71px;
+    height: 71px;
+    background-color: rgba(49,53,54,.5);
+    position: relative;
+}
+.main-func li.active{
+    background-color: transparent;
+}
+.main-func .tap-link{
+    display: block;
+    height: 100%;
+    text-align: center;
+}
+.main-func .tap-link i,
+.main-func .tap-link em{
+    display: block;
+    width: 100%;
+    position: absolute;
+}
+.main-func .tap-link i{
+    top: 14px;
+    font-size: 18px;
+}
+.main-func .tap-link em{
+    bottom: 14px;
+    font-size: 12px;
 }
 
 
@@ -250,7 +570,6 @@ a{
 .footer-panel{
 
 }
-
 
 
 

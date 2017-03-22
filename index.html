@@ -11,6 +11,7 @@
         <link rel="apple-touch-icon" href="">
         <link rel="stylesheet" href="font/iconfont.css">
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="js/vendor/swiper/swiper.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/app-responsive.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -38,33 +39,162 @@
                             <section class="pull-right top-support">
                                 <div class="link-support">
                                     <a href="javascript:;" class="tap-link">
-                                        
+                                        我的口袋<i class="iconfont icon-angledown"></i>
                                     </a>
                                     <a href="javascript:;" class="tap-link">
-                                        
+                                        <i data-icon="phone" class="iconfont icon-shouji"></i>手机熊猫<i class="iconfont icon-angledown"></i>
                                     </a>
                                     <a href="javascript:;" class="tap-link">
-                                        
+                                        微信<i class="iconfont icon-angledown"></i>
                                     </a>
                                     <a href="javascript:;" class="tap-link">
-                                        
+                                        电话<i class="iconfont icon-angledown"></i>
                                     </a>
                                     <a href="javascript:;" class="tap-link">
-                                        
+                                        客户服务<i class="iconfont icon-angledown"></i>
                                     </a>
                                     <a href="javascript:;" class="tap-link">
-                                        
+                                        合作中心<i class="iconfont icon-angledown"></i>
                                     </a>
                                 </div>
                             </section><!-- 功能支持 -->
 
                         </div>
                     </section><!-- 顶部信息区 -->
-                    <section class="header-main">
-                        主要内容区
-                    </section><!-- 主要内容区 -->
+                    <section class="header-main w1200-box clearfix">
 
+                        <div class="w1200">
+
+                            <div class="head-wrap">
+                                <section class="logo-wrap vertical-layout">
+                                    <img src="img/panda-logo-equal.png" art="熊猫旅行LOGO"/>
+                                </section><!-- logo -->
+
+                                <section class="head-search complete-center">
+                                    <div class="dropdown-menu">
+                                        <section class="spacing-medium"><span>全部</span><i class="iconfont icon-chevrondown"></i>
+                                        </section>
+                                        <section></section>
+                                    </div>
+                                    <input type="text" class="vertical-layout spacing-small" placeholder="请输入目的地、主题或关键字" />
+                                    <button id="head-search-btn" class="vertical-layout">
+                                        <i class="iconfont icon-Searchffffffpx icon-medium"></i>
+                                    </button>
+                                </section><!-- 头部搜索 -->
+
+                                <section class="hotline-wrap vertical-layout">
+                                    <img src="img/hotline.png" class="vertical-layout" alt="服务热线" />
+                                    <p class="spacing-small">7*12小时服务电话</p>
+                                    <em class="spacing-tiny">400-823-8888</em>
+                                </section><!-- 服务热线 -->
+
+                            </div><!-- 头部内容区 -->
+
+                            <div class="head-navbar">
+                                <section class="orientation spacing-small">
+                                    <i class="iconfont icon-locationfill"></i><em>南昌站</em>
+                                </section><!-- 定位 -->
+                                <section class="navbar-wrap vertical-layout">
+                                    <ul class="clearfix">
+                                        <li class="nav-words-2">
+                                            <a href="javascript:;" class="tap-link">首页</a></li>
+                                        <li class="nav-words-4 active">
+                                            <a href="javascript:;" class="tap-link">必游景点</a></li>
+                                        <li class="nav-words-4">
+                                            <a href="javascript:;" class="tap-link">当地酒店</a></li>
+                                        <li class="nav-words-4">
+                                            <a href="javascript:;" class="tap-link">热门周边</a></li>
+                                        <li class="nav-words-3">
+                                            <a href="javascript:;" class="tap-link">国内游</a></li>
+                                        <li class="nav-words-4">
+                                            <a href="javascript:;" class="tap-link">地道美食</a></li>
+                                        <li class="nav-words-2">
+                                            <a href="javascript:;" class="tap-link">特产</a></li>
+                                        <li class="nav-words-2">
+                                            <a href="javascript:;" class="tap-link">导游</a></li>
+                                        <li class="nav-words-2">
+                                            <a href="javascript:;" class="tap-link">租车</a></li>
+                                    </ul>
+                                </section><!-- 导航条容器 -->
+                            </div><!-- 头部导航区 -->
+                        </div>
+                    </section><!-- 主要内容区 -->
                 </div><!-- 页眉面板 -->
+
+                <div class="carousel-panel">
+                    
+                    <div class="swiper-container" id="index-carousel">
+
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="javascript:;">
+                                    <img src="img/figure01_tiny.jpeg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;">
+                                    <img src="img/figure02_tiny.jpeg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;">
+                                    <img src="img/figure03_tiny.jpeg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;">
+                                    <img src="img/figure04_tiny.jpeg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="javascript:;">
+                                    <img src="img/figure05_tiny.jpeg" alt=""/>
+                                </a>
+                            </div>
+                        </div><!-- 图片容器 -->
+
+                        <div class="swiper-pagination"></div><!-- 引入分页器 -->
+
+                    </div><!-- swiper轮播容器 -->
+
+                    <section class="nav-func">
+                        <div class="main-func" id="main-func">
+                            <ul>
+                                <li>
+                                    <a href="javascript:;" data-func="" class="tap-link">
+                                        <i class="iconfont icon-lvyou"></i>
+                                        <em class="spacing-small">必游景点</em>
+                                    </a></li>
+                                <li class="active">
+                                    <a href="javascript:;" data-func="" class="tap-link">
+                                        <i class="iconfont icon-lvyou"></i>
+                                        <em class="spacing-small">当地酒店</em>
+                                    </a></li>
+                                <li>
+                                    <a href="javascript:;" data-func="" class="tap-link">
+                                        <i class="iconfont icon-lvyou"></i>
+                                        <em class="spacing-small">热门周边</em>
+                                    </a></li>
+                                <li>
+                                    <a href="javascript:;" data-func="" class="tap-link">
+                                        <i class="iconfont icon-lvyou"></i>
+                                        <em class="spacing-small">国内游</em>
+                                    </a></li>
+                                <li>
+                                    <a href="javascript:;" data-func="" class="tap-link">
+                                        <i class="iconfont icon-lvyou"></i>
+                                        <em class="spacing-small">预约导游</em>
+                                    </a></li>
+                                <li>
+                                    <a href="javascript:;" data-func="" class="tap-link">
+                                        <i class="iconfont icon-lvyou"></i>
+                                        <em class="spacing-small">当地特产</em>
+                                    </a></li>
+                            </ul>
+                        </div><!-- 主导航区 -->
+                    </section><!-- 功能导航区域 -->
+
+                </div><!-- 轮播图面板 -->
 
                 <div class="content-panel"></div><!-- 中心内容面板 -->
 
@@ -76,6 +206,9 @@
         <!-- 用cdn引入jq，当cdn不稳定时，使用本地的jq -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
+
+        <!-- 引入轮播图插件 -->
+        <script src="js/vendor/swiper/swiper.jquery.min.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
