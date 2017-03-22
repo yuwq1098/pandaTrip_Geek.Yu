@@ -20,6 +20,6 @@ var mySwiper = new Swiper('#index-carousel', {
 });
 
 // 初始化加载插件
-$.initJQPlugin();
+$.initJQPlugin().joinUs();
 // 功能导航区域切换调用
 $("#nav-func").navFunc();

@@ -35,6 +35,37 @@
     // 初始化加载插件
     $.initJQPlugin = function(){
 
+        var MyPlugin= function() {}
+        //定义haorooms的方法
+        MyPlugin.prototype = {
+
+            //加入我们
+            joinUs: function() {
+                var logZ1 = "\n探险家智旅是一家为中国旅游业提供\n"
+                   +"全域旅游规划设计+产品策划+软件开发+系统集成+运营维护\n"
+                   +"的四维一体化高新信息技术研发与互联网整合行销解决方案的科技公司。\n\n\n"
+                   +"如果您像我们一样深深地热爱互联网和旅行\n"
+                   +"那么还犹豫什么，赶紧加入我们\n"
+                           +"探险家能为你实现梦想提供最广阔的平台\n\n";
+                var logZ2 = "请将简历发送至："+"%c txjer@hr.com";
+                var logZ3 = "探险家智旅官网："+"%c https://www.txjer.com";
+                var logZ2_style = "color:#349039; font-size:20px;\n\n";
+                var logZ3_style = "color:#349039; line-height:32px; font-size:20px;\n\n";
+
+                console.log(logZ1);           
+                console.log(logZ2 , logZ2_style);
+                console.log(logZ3 , logZ3_style);
+                return false;   
+            },
+            ooo:function(){
+                console.log("aaaa");
+                return false;
+            }
+        }
+        //创建haorooms的实体
+        var myPlugin = new MyPlugin();
+        return myPlugin;
+        
     };
     // 首页导航切换（轮播区）
     $.fn.navFunc = function() {
