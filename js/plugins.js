@@ -37,6 +37,7 @@
             $mainFunc,
             $childFunc,
             m_tapLink,
+            isAnimation = true,
             dataFunc;
         
         $el = $(this);
@@ -45,6 +46,8 @@
     
         m_tapLink = $mainFunc.find("ul li .tap-link");
         m_tapLink.on("mouseover",function(e){
+            if(!isAnimation){ return false; }
+            isAnimation = !isAnimation;
             var _this = $(e.currentTarget);
             var _thisParent = _this.parent("li");
 
@@ -54,6 +57,9 @@
             dataFunc =  _this.attr("data-func");
             var c_itemFunc = $childFunc.find("[data-func="+dataFunc+"]");
             c_itemFunc.fadeIn(200).siblings(".func-item").fadeOut(150);
+            setTimeout(function(){
+                isAnimation = !isAnimation;
+            },100);
         })
         
     };  

@@ -214,9 +214,11 @@ body {
     font-family: Arial,"Lucida Grande","Microsoft Yahei","Hiragino Sans GB","Hiragino Sans GB W3",SimSun,"PingFang SC",STHeiti;
     display: block;
     overflow: hidden;
+    overflow-y: scroll; 
     border: 0;
     margin: 0;
     padding: 0;
+    background: #f5f5f5;
 }
 
 a{
@@ -240,7 +242,9 @@ ul,li{
     padding: 0; 
     list-style: none;
 }
-
+section,div,span,em,i,p,h1,h2,h3,h4,h5,h6{
+    cursor: default;
+}
 em,i{
     font-style: normal;
 }
@@ -260,6 +264,7 @@ em,i{
 
 #main-content{
     display: block;
+
 }
 
 .main-panel{
@@ -548,11 +553,14 @@ em,i{
 .main-func li{
     width: 71px;
     height: 71px;
-    background-color: rgba(49,53,54,.5);
+    background: rgba(49,53,54,.5);
+    -webkit-transition: background .15s linear;
+    -o-transition: background .15s linear;
+    transition: background .15s linear;
     position: relative;
 }
 .main-func li.active{
-    background-color: transparent;
+    background: transparent;
 }
 .main-func .tap-link{
     display: block;
@@ -632,13 +640,268 @@ em,i{
     letter-spacing: 0.05em;
 }
 
+/*首页主要内容面板*/
 .content-panel{
-
+    display: block;
+    width: 100%;
+    min-height: 150px;
+}
+/*动态信息条*/
+.content-panel .info-bar{
+    height: 45px;
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #e2e2e2;
+}
+.content-panel .site-service{
+    width: 475px;
+    height: 45px;
+    position: relative;
+}
+.content-panel .site-service img{
+    width: 475px;
+    height: 43px;
+    margin-top: 1px;
+}
+.content-panel .site-activity{
+    line-height: 45px;
+    color: #fb3e3e;
+}
+.content-panel .site-activity i{
+    display: inline-block;
+    -webkit-transform: translateY(1px);
+    -moz-transform: translateY(1px);
+    transform: translateY(1px);
 }
 
+/*底部面板*/
 .footer-panel{
-
+    background-color: #fff;
+    height: 570px;
+    width: 100%;
 }
+/*底部内容*/
+.foot-content{
+    width: 100%;
+    height: 370px;
+    border-top: 1px solid #e2e2e2;
+}
+/*底部服务支持*/
+.foot-content .service-support{
+    width: 1200px;
+    height: 120px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.service-support img{
+    width: 100%;
+    height: 100%;
+}
+/*底部站点信息*/
+.foot-content .website-info{
+    width: 1200px;
+    height: 250px;
+    position: relative;
+}
+.foot-content p.info{
+    text-align: center;
+    line-height: 20px;
+    color: #777;
+    font-family: "宋体",Arial,'Microsoft Yahei';
+}
+/*关注我们*/
+.website-info .focus{
+    width: 250px;
+    height: 250px;
+}
+.focus .logo-wrap{
+    width: 250px;
+    height: 88px;
+    margin-top: 25px; 
+}
+.focus .logo-wrap img{
+    width: 100%;
+    height: 100%;
+}
+.focus p.info{
+    font-size: 16px;
+    font-weight: 600;
+    cursor: default;
+    color: #545454;
+    font-family: "黑体","宋体",Arial,'Microsoft Yahei';
+}
+.focus .focus-way{
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 12px;
+    text-align: center;
+}
+.focus .focus-way a{
+    display: inline-block;
+}
+.focus .focus-way i{
+    font-size: 42px;
+    letter-spacing: .15em;
+    text-indent: .15em;
+}
+.sina-weibo i{
+    color: #fb3e3e;
+}
+.wechat i{
+    color: #74bb12;
+}
+
+/*站点链接*/
+.website-info .link-items{
+    width: 775px;
+    left: 250px;
+}
+.link-items .links-wrap{
+    width: 720px;
+    height: 170px;
+    left: 30px;
+}
+.link-items .links-wrap >li{
+    width: 185px;
+    float: left;
+    height: 100%;
+    position: relative;
+}
+.link-items .links-wrap >li:not(:last-child){
+    margin-right: 15px;
+}
+.link-items .links-wrap >li.reduced{
+    width: 120px;
+}
+.link-items .links-wrap >li.extended{
+    width: 250px;
+}
+.links-wrap >li h3{
+    line-height: 32px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+    letter-spacing: .25em;
+    color: #545454;
+    cursor: default;
+    font-family: "黑体","宋体",Arial,'Microsoft Yahei';
+}
+.link-items .child-links{
+    letter-spacing: .15em;
+    line-height: 28px;
+    color: #777;
+    padding-left: 2px;
+}
+.link-items .child-links a:hover{
+    color: #545454;
+    display: inline-block;
+    position: relative;
+    font-weight: 600;
+    font-family: "黑体","宋体",Arial,'Microsoft Yahei';
+
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.links-wrap >li p.explain{
+    letter-spacing: .15em;
+    line-height: 28px;
+    max-height: 84px;
+    overflow: hidden;
+    color: #777;
+    padding-left: 2px;
+    cursor: default;
+}
+.links-wrap .link-box{
+    width: 100%;
+    height: 28px;
+    letter-spacing: .15em;
+    line-height: 28px;
+    margin-top: 5px;
+}
+.links-wrap .link-box a{
+    color: #777;
+    font-size: 14px;
+    margin-right: 5px;
+    font-family: "黑体","宋体",Arial,'Microsoft Yahei';
+}
+.links-wrap .link-box a:hover{
+    color: #545454;
+    display: inline-block;
+    position: relative;
+    font-weight: 600;
+
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    transform-origin: right center;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+/*扫码下载*/
+.website-info .download{
+    width: 175px;
+    height: 250px;
+}
+.download .code-wrap{
+    width: 115px;
+    height: 115px;
+    background-color: #fff;
+    border: 1px solid #e2e2e2;  
+    border-radius: 3px; 
+    margin: 55px auto 8px auto;
+}
+.download .code-wrap img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px; 
+}
+
+
+/*底部版权支持*/
+.foot-copyrigh{
+    height: 200px;
+    background: #313536;
+}
+.foot-copyrigh .license{
+    width: 680px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 22px 0;
+}
+.license li{
+    display: inline-block;
+    width: 120px;
+    height: 52px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-left: 11px;
+}
+.license li img{
+    height: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.foot-copyrigh .copyrigh p{
+    color: #d2d2d2;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-indent: .08em;
+    cursor: default;
+}
+
+.foot-copyrigh .copyrigh em{
+    margin: 0 5px;
+}
+
+
 
 
 
