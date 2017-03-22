@@ -32,6 +32,11 @@
             $this.hide(); //注意这里的this不再指向jQuery元素，这里的this指向当前这个function对象
         });
     };
+    // 初始化加载插件
+    $.initJQPlugin = function(){
+
+    };
+    // 首页导航切换（轮播区）
     $.fn.navFunc = function() {
         var $el,
             $mainFunc,
@@ -60,7 +65,8 @@
             setTimeout(function(){
                 isAnimation = !isAnimation;
             },100);
-        })
-        
-    };  
+        });
+        return this;
+    }; 
+
 })(jQuery); 

@@ -17,7 +17,9 @@ var mySwiper = new Swiper('#index-carousel', {
 	onAutoplayStop: function(swiper){
 	    mySwiper.startAutoplay();
 	},
-})
+});
 
+// 初始化加载插件
+$.initJQPlugin();
 // 功能导航区域切换调用
 $("#nav-func").navFunc();
