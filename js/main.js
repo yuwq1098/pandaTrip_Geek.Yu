@@ -20,4 +20,4 @@ var mySwiper = new Swiper('#index-carousel', {
 })
 
 // 功能导航区域切换调用
-$("#main-func").mainFunc();
+$("#nav-func").navFunc();

@@ -147,6 +147,17 @@ hr {
 }
 
 /*
+ * 禁止用户选中文字
+ */
+.user-unselect{
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+
+/*
  * 调整以下元素使他们之间的差距减小，
  * audio、canvas、iframes、images、videos和底部的容器。
  */
@@ -415,6 +426,7 @@ em,i{
     text-align: center;
     font-size: 16px;
     margin-bottom: -2px;
+    cursor: default;
 }
 .head-navbar .orientation i{
     font-size: 20px;
@@ -528,11 +540,11 @@ em,i{
     color: #f5f5f5;
 }
 
+/*主导航区*/
 .nav-func .main-func{
-    width: 85px;
+    width: 71px;
     height: 100%;
 }
-
 .main-func li{
     width: 71px;
     height: 71px;
@@ -562,6 +574,63 @@ em,i{
     font-size: 12px;
 }
 
+/*子导航区*/
+.nav-func .child-func{
+    width: 149px; 
+    height: 100%;
+    position: absolute;
+    left: 86px;
+    top: 0;
+}
+.child-func .func-item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.child-func .func-item.active{
+    display: block;
+}
+/*每个func-item的高度保证在61px;*/
+.child-func .func-item li{
+    width: 100%;
+    height: 51px;
+    position: relative;
+    padding-top: 10px;
+    cursor: default;
+}
+/*除了最后一个，过滤选择器*/
+.child-func .func-item li:not(:last-child)::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,.45);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.child-func .func-item li > *{
+    padding: 0 4px;
+    cursor: default;
+    letter-spacing: .1em;
+}
+.child-func .func-item h4{
+    line-height: 22px;
+    font-size: 15px;
+    font-weight: 400;
+}
+.child-func .func-item p{
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    overflow: hidden;
+}
+.child-func .func-item a{
+    display: inline-block;
+    margin-right: 6px;
+    letter-spacing: 0.05em;
+}
 
 .content-panel{
 

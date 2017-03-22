@@ -32,8 +32,29 @@
             $this.hide(); //注意这里的this不再指向jQuery元素，这里的this指向当前这个function对象
         });
     };
-    $.fn.mainFunc = function() {
-        var $el = $(this);
-        console.log($el);      
+    $.fn.navFunc = function() {
+        var $el,
+            $mainFunc,
+            $childFunc,
+            m_tapLink,
+            dataFunc;
+        
+        $el = $(this);
+        $mainFunc = $el.find(".main-func");
+        $childFunc = $el.find(".child-func");
+    
+        m_tapLink = $mainFunc.find("ul li .tap-link");
+        m_tapLink.on("mouseover",function(e){
+            var _this = $(e.currentTarget);
+            var _thisParent = _this.parent("li");
+
+            // 控制main-taplink的高亮
+            _thisParent.addClass("active").siblings("li").removeClass("active");
+            // 控制绑定的data-func显隐
+            dataFunc =  _this.attr("data-func");
+            var c_itemFunc = $childFunc.find("[data-func="+dataFunc+"]");
+            c_itemFunc.fadeIn(200).siblings(".func-item").fadeOut(150);
+        })
+        
     };  
 })(jQuery); 
