@@ -347,6 +347,9 @@ ul,li{
 section,div,span,em,i,p,h1,h2,h3,h4,h5,h6{
     cursor: default;
 }
+a,a *{
+    cursor: pointer;
+}
 em,i{
     font-style: normal;
 }
@@ -575,6 +578,7 @@ em,i{
 }
 .head-navbar .navbar-wrap a{
     color: #313536;
+    display: block;
 }
 
 .head-navbar .navbar-wrap li.active a{
@@ -820,16 +824,13 @@ em,i{
     -o-transition: -o-transform .18s cubic-bezier(.25,0,.4,.9);
     transition: transform .18s cubic-bezier(.25,0,.4,.9);
 }
-
 .hot-push li:not(:last-child){
     margin-right: 15px;
 }
 
-
 /*中心内容盒子容器*/
 .content-box-item .content-box{
-    height: 500px;
-    background-color: #d2d2d2;
+    height: 300px;
     margin-bottom: 25px;
 }
 .content-box-item .box-flex-3{
@@ -846,23 +847,27 @@ em,i{
 /*当季限时优惠*/
 .content-box-item .content-box-1{
     height: 364px;
-    background-color: transparent;
 }
 /*box的头部*/
 .content-box-item .box-head{
-    height: 64px;
+    height: 61px;
     line-height: 64px;
     background-color: #fff;
     position: relative;
+    border-bottom: 3px solid #545454;
 }
-.content-box-item .box-head > *{
+.content-box-item .box-head-1{
+    height: 64px;
+    border: none;
+}
+.content-box-item .box-head .h_title > *{
     float: left;
 }
-.content-box-item .box-head h2{
+.content-box-item .h_title h2{
     font-size: 24px;
     padding-left: 10px;
 }
-.content-box-item .box-head p.assist{
+.content-box-item .h_title p.assist{
     margin-left: 6px;
     font-size: 13px;
     color: #777;
@@ -904,12 +909,109 @@ em,i{
     font-family: "黑体",Arial,'Microsoft Yahei';
 }
 
+/*盒子头部导航条*/
+.content-box-item .h_navbar{
+    width: 850px;
+    height: 52px;
+    line-height: 49px;
+    background: transparent;
+    position: absolute;
+    left: 275px;
+    bottom: 0;
+    margin-bottom: -3px;
+}
+.content-box-item .h_navbar li{
+    height: 49px;
+    padding: 0 5px;
+    position: relative;
+    text-align: center;
+    border-bottom: 3px solid #545454;
+    float: left;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    font-family: "黑体","宋体",Arial,'Microsoft Yahei';
+}
+
+.content-box-item .h_navbar li.nav-words-2{
+    min-width: 58px;
+}
+.content-box-item .h_navbar li.nav-words-3{
+    min-width: 75px;
+}
+.content-box-item .h_navbar li.nav-words-4{
+    min-width: 90px;
+}
+.content-box-item .h_navbar li a{
+    display: block;
+    color: #313536;
+    position: relative;
+}
+.content-box-item .h_navbar li a:hover{
+    font-weight: 700;
+}
+.content-box-item .h_navbar li.active{
+    border-bottom: 3px solid #349039;
+}
+.content-box-item .h_navbar li.active::after{
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 3px solid #349039;
+    border-left: 3px solid #349039;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    transform-origin: left bottom;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/*盒子头部更多*/
+.content-box-item a.h_more{
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    letter-spacing: 2px;
+    right: 0;
+    top: 6px;
+    font-size: 14px;
+    font-family: "宋体",Arial,'Microsoft Yahei';
+    color: #777;
+}
+.content-box-item a.h_more i.iconfont{
+    display: inline-block;
+    font-size: 18px;
+    color: #349039;
+    -webkit-transform: translateY(1.5px);
+    -moz-transform: translateY(1.5px);
+    transform: translateY(1.5px);
+    text-shadow: none;
+}
+.content-box-item a.h_more:hover{
+    color: #313536;
+}
+
 /*box的内容*/
 .content-box .box-content{
     width: 100%;
     height: 300px;
-    background: url(../img/discounts_bg.png) 0 0 no-repeat;
     position: relative;
+    background: #fff;
+}
+.content-box-1 .box-content{
+    height: 300px;
+    background: url(../img/discounts_bg.png) 0 0 no-repeat;
 }
 .box-content.box-type01 ul{
     width: 916px;
@@ -940,10 +1042,7 @@ em,i{
     position: relative;
     z-index: 2;
 }
-.box-content.box-type01 li >a,
-.box-content.box-type01 li >a *{
-    cursor: pointer;
-}
+
 .box-content.box-type01 li .imgWrap{
     width: 202px;
     height: 125px;
@@ -981,7 +1080,6 @@ em,i{
     font-weight: 700;
     letter-spacing: 1px;
     margin: 0 2px;
-    transform: 
 }
 .box-content.box-type01 p.info{
     line-height: 24px;
@@ -1008,6 +1106,176 @@ em,i{
     color: #313536;
     font-weight: 700;
 }
+
+/*首页内容侧栏*/
+.box-sidebar{
+    width: 250px;
+    height: 100%;
+    position: relative;
+}
+.box-sidebar ul{
+    width: 204px;
+    height: 150px;
+    top: 50px;
+    bottom: auto;
+}
+.box-sidebar ul li{
+    width: 95px;
+    height: 34px;
+    line-height: 34px;
+    background: #313536;
+    color: #f5f5f5;
+    text-align: center;
+    -webkit-border-radius: 16px 13px 15px 12px;
+    border-radius: 16px 13px 15px 12px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-indent: 2px;
+    font-family: "黑体","宋体",Arial,'Microsoft Yahei';
+    margin-bottom: 22px;
+    float: left;
+}
+.box-sidebar ul li:not(:nth-child(2n+1)){
+    margin-left: 14px;
+    -webkit-border-radius: 13px 15px 12px 14px;
+    border-radius: 13px 15px 12px 14px;
+}
+.box-sidebar ul li a{
+    display: block;
+}
+
+/*必游景点*/  
+.content-box-item .content-box-2{
+    height: 544px;
+}
+.content-box-2 .box-content{
+    height: 480px;
+}
+.content-box-2 .box-sidebar{
+    position: absolute;
+    left: 0;
+    background: url(../img/must-see_bg.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.content-box-2 .box-sidebar li{
+    background: #33bb99;
+}
+.content-box-2 .box-sidebar li:hover{
+    background: #24af8c;
+}
+.content-box-2 .box-info{
+    width: 950px;
+    height: 480px;
+    position: relative;
+}
+.content-box-2 .box-layout{
+    width: 914px;
+    height: 446px;
+}
+.content-box-2 .box-layout li{
+    width: 294px;
+    height: 215px;
+    float: left;
+    margin-bottom: 16px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0,0,0,.12);
+}
+.content-box-2 .box-layout li:not(:nth-child(3n+3)){
+    margin-right: 16px;
+}
+.content-box-2 .box-layout li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.content-box-2 .box-layout .imgWrap{
+    width: 294px;
+    height: 167px;
+}
+.content-box-2 .box-layout .b_content{
+    height: 48px;
+    line-height: 48px;
+    position: relative;
+}
+.content-box-2 .box-layout p.info{
+    height: 48px;
+    line-height: 48px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #545454;
+    font-family: "宋体",Arial,'Microsoft Yahei';
+}
+.content-box-2 .box-layout span.vital{
+    position: absolute;
+    top: 0;
+    right: 8px;
+    color: #fb3e3e;
+    line-height: 48px;
+    font-size: 14px;
+    letter-spacing: .05em;
+}
+.content-box-2 .box-layout span.vital em{
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 2px;
+}
+.content-box-2 .box-layout li:hover{
+    box-shadow: 0 0 20px rgba(0,0,0,.35);
+}
+.content-box-2 .box-layout li:hover p.info{
+    color: #313536;
+}
+
+/*更换 必游景点 内的 box-head部分样式*/
+.content-box-2 .h_navbar li.active{
+    border-bottom: 3px solid #33bb99;
+}
+.content-box-2 .h_navbar li.active::after{
+    border-top: 3px solid #33bb99;
+    border-left: 3px solid #33bb99;
+}
+.content-box-2 a.h_more i.iconfont{
+    color: #33bb99;
+}
+
+/*更换 热门周边 内的 box-head部分样式*/
+.content-box-3 .h_navbar li.active{
+    border-bottom: 3px solid #3baeda;
+}
+.content-box-3 .h_navbar li.active::after{
+    border-top: 3px solid #3baeda;
+    border-left: 3px solid #3baeda;
+}
+.content-box-3 a.h_more i.iconfont{
+    color: #3baeda;
+}
+
+/*更换 当地酒店 内的 box-head部分样式*/
+.content-box-4 .h_navbar li.active{
+    border-bottom: 3px solid #f4bc43;
+}
+.content-box-4 .h_navbar li.active::after{
+    border-top: 3px solid #f4bc43;
+    border-left: 3px solid #f4bc43;
+}
+.content-box-4 a.h_more i.iconfont{
+    color: #f4bc43;
+}
+
+/*更换 国内游 内的 box-head部分样式*/
+.content-box-5 .h_navbar li.active{
+    border-bottom: 3px solid #8ac050;
+}
+.content-box-5 .h_navbar li.active::after{
+    border-top: 3px solid #8ac050;
+    border-left: 3px solid #8ac050;
+}
+.content-box-5 a.h_more i.iconfont{
+    color: #8ac050;
+}
+
 
 
 /*底部面板*/
