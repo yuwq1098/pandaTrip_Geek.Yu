@@ -193,6 +193,18 @@ hr {
 }
 
 /*
+ * 启用硬件加速
+ */
+.will-accelerate{
+    /*提醒浏览器提前准备硬件加速,兼容性不行*/
+    will-change: transform;
+    /*触发硬件加速 CPU 转 GPU*/
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/*
  * 禁止用户选中文字
  */
 .user-unselect{
@@ -310,13 +322,10 @@ em,i{
 
 #main-content{
     display: block;
-
 }
-
 .main-panel{
     display: block;
 }
-
 .header-panel{
     display: block;
 }
@@ -737,18 +746,22 @@ em,i{
     height: 135px;
     margin-top: 25px;
     position: relative;
+    -webkit-transition: -webkit-transform .12s cubic-bezier(.05,.2,.6,1);
+    -o-transition: -o-transform .12s cubic-bezier(.05,.2,.6,1);
+    transition: transform .12s cubic-bezier(.05,.2,.6,1);
+    
 }
 .hot-push li:hover{
     -webkit-transform-origin: center center;
     -moz-transform-origin: center center;
     transform-origin: center center;
-    -webkit-transform: translateY(-2px) scale(1.02);
-    -moz-transform: translateY(-2px) scale(1.02);
-    transform: translateY(-2px) scale(1.02);
+    -webkit-transform: translate3d(0,-2px,0) scale(1.02);
+    -moz-transform: translate3d(0,-2px,0) scale(1.02);
+    transform: translate3d(0,-2px,0) scale(1.02);
 
-    -webkit-transition: -webkit-transform .10s ease-out;
-    -o-transition: -o-transform .10s ease-out;
-    transition: transform .10s ease-out;
+    -webkit-transition: -webkit-transform .18s cubic-bezier(.25,0,.4,.9);
+    -o-transition: -o-transform .18s cubic-bezier(.25,0,.4,.9);
+    transition: transform .18s cubic-bezier(.25,0,.4,.9);
 }
 
 .hot-push li:not(:last-child){
