@@ -699,7 +699,7 @@ em,i{
 .content-panel{
     display: block;
     width: 100%;
-    min-height: 500px;
+    /*min-height: 380px;*/
 }
 
 /*动态信息条*/
@@ -729,22 +729,28 @@ em,i{
     -moz-transform: translateY(1px);
     transform: translateY(1px);
 }
+/*中心内容盒子容器*/
+.content-panel .content-box-item{
+    height: 800px;
+}
 
 /*热门推送*/
 .content-panel .hot-push{
-    height: 185px;
+    width: 100%;
+    height: 175px;
     position: relative;
 }
 .hot-push ul{
     height: 135px;
-    margin-top: 25px;
-    padding-left: 15px;
+    position: absolute;
+    margin-top: 30px;
+    padding-left: 8px; 
 }
 .hot-push li{
     float: left;
-    width: 380px;   
+    width: 386px;   
     height: 135px;
-    margin-top: 25px;
+    margin-top: 0px;
     position: relative;
     -webkit-transition: -webkit-transform .12s cubic-bezier(.05,.2,.6,1);
     -o-transition: -o-transform .12s cubic-bezier(.05,.2,.6,1);
@@ -765,12 +771,59 @@ em,i{
 }
 
 .hot-push li:not(:last-child){
-    margin-right: 15px;
+    margin-right: 13px;
 }
 .hot-push li img{
     width: 100%;   
     height: 100%;
 }
+
+/*当季限时优惠*/
+.content-box-item .content-box{
+    height: 350px;
+    background-color: #d2d2d2;
+    margin-bottom: 20px;
+}
+.content-box-item .content-box-1{
+    height: 364px;
+    background-color: transparent;
+}
+.content-box-item .box-head{
+    height: 64px;
+    line-height: 64px;
+    background-color: #fff;
+}
+.content-box-item .box-head > *{
+    display: inline-block;
+}
+.content-box-item .box-head h2{
+    font-size: 24px;
+}
+.content-box .box-content{
+    width: 100%;
+    height: 300px;
+    background: url(../img/discounts_bg.png) 0 0 no-repeat;
+    position: relative;
+}
+.box-content.box-type01 ul{
+    width: 916px;
+    height: 260px;
+    right: 22px;
+    left: auto;
+}
+.box-content.box-type01 ul li{
+    width: 220px;
+    height: 260px;
+    float: left;
+    background: #fff;
+    border-radius: 3px;
+    border-radius: 3px;
+}
+.box-content.box-type01 ul li:not(:last-child){
+    margin-right: 12px;
+}
+
+
 
 
 /*底部面板*/
@@ -778,12 +831,14 @@ em,i{
     background-color: #fff;
     height: 570px;
     width: 100%;
+    z-index: 99;
 }
 /*底部内容*/
 .foot-content{
     width: 100%;
     height: 370px;
     border-top: 1px solid #e2e2e2;
+    background: #fff;
 }
 /*底部服务支持*/
 .foot-content .service-support{
