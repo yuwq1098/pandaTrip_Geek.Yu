@@ -1240,6 +1240,26 @@ em,i{
     color: #33bb99;
 }
 
+/*热门周边*/  
+.content-box-item .content-box-3{
+    height: 644px;
+}
+.content-box-3 .box-content{
+    height: 580px;
+}
+.content-box-3 .box-sidebar{
+    position: absolute;
+    left: 0;
+    background: url(../img/popular-around_bg.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.content-box-3 .box-sidebar li{
+    background: #3baeda;
+}
+.content-box-3 .box-sidebar li:hover{
+    background: #2ca1ce;
+}
+
 /*更换 热门周边 内的 box-head部分样式*/
 .content-box-3 .h_navbar li.active{
     border-bottom: 3px solid #3baeda;
