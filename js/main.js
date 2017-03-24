@@ -23,3 +23,8 @@ var mySwiper = new Swiper('#index-carousel', {
 $.initJQPlugin().joinUs();
 // 功能导航区域切换调用
 $("#nav-func").navFunc();
+// 首页限时优惠倒计时
+$("#count-down").secondsKill({
+	endTime: 2500000000,   //结束时间
+	killEndFunc: null,     //倒计时结束的回调
+});

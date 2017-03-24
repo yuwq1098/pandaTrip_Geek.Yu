@@ -67,6 +67,86 @@
         return myPlugin;
         
     };
+
+    // 限时秒杀
+    $.fn.secondsKill = function(option){
+        
+        var $el,           // 所指定的$DOM
+            timeBlock,     // 获取每个时间块
+            defaults,      // 默认配置
+            setting,       // 实际的配置
+            timestamp,     // 获取当前时间戳
+            timeDiff,      // 获取时间差
+            endKill,       // 接收倒计时结束的回调
+            timer;         // 定时器
+       
+        
+        $el = $(this);
+        var p_hour = $el.find("span.p_hour");
+        var p_minute = $el.find("span.p_minute");
+        var p_second = $el.find("span.p_second");
+
+        timeBlock = $el.find("em"); 
+        defaults = { 
+            endTime: 1502150888,     // 默认结束时间2017-08-08 08:08:08
+            bgColor:"#313536",
+            isOneDay: true,          //是否只是单天24小时内倒计时，是的话就是24小时，否的话就是100天
+            killEndFunc: null,       //秒杀结束方法
+        };
+        // 参数继承，意思是后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。
+        setting = $.extend(defaults,option);
+
+        timestamp = Date.parse(new Date())/1000;
+        timeDiff = setting.endTime - timestamp;
+        // 如果时间差过大,就直接取范围上限的值
+        timeDiff = setting.isOneDay ? (timeDiff>86400?86399:timeDiff) : (timeDiff > 8640000?8639999:timeDiff);
+        
+        endKill = setting.killEndFunc;
+        
+        // 进入定时器前先渲染一次
+        render();
+        timer = setInterval(function(){
+            if(timeDiff<0){
+                endKill();
+                defaultEndKill();
+                return false;
+            }
+            render();
+            
+        },1000);
+
+        // 改变时间块的样式
+        timeBlock.css({
+            backgroundColor:setting.bgColor,
+        });
+        // 默认的秒杀结束方法
+        function defaultEndKill(){
+            //清除定时器
+            clearInterval(timer);
+        }
+        // 时间补零
+        function textFill(needle){
+            return (needle < 10 ? ("0" + needle) : needle).toString(); 
+        } 
+        // 倒计时指针渲染
+        function render(){
+            // 各指针数值
+            var hh = Math.floor(timeDiff / 3600); 
+            var mm = Math.floor(timeDiff / 60) - (hh * 60);
+            var ss = Math.floor(timeDiff) - (hh * 3600) - (mm * 60); 
+            // 补零
+            hh = textFill(hh);
+            mm = textFill(mm);
+            ss = textFill(ss);
+            // 渲染DOM
+            p_hour.html("<em>"+hh.substr(0,1) +"</em>"+"<em>"+hh.substr(1,1)+"</em>");
+            p_minute.html("<em>"+mm.substr(0,1)+"</em>"+"<em>"+mm.substr(1,1)+"</em>");
+            p_second.html("<em>"+ss.substr(0,1)+"</em>"+"<em>"+ss.substr(1,1)+"</em>");
+            return timeDiff--;
+        }
+
+        return this;
+    }
     // 首页导航切换（轮播区）
     $.fn.navFunc = function() {
         var $el,
