@@ -1483,9 +1483,39 @@ em,i{
     position: relative;
 }
 /*炫酷车型*/
-.box-flex-3 .content-box-6{
-    
+.content-box-6 .box-layout-1{
+    width: 358px;
+    height: 310px;
+    box-shadow: 0 0 15px rgba(0,0,0,.12);
 }
+.content-box-6 .box-layout-1:hover{
+    box-shadow: 0 0 20px rgba(0,0,0,.35);
+}
+.content-box-6 .imgWrap{
+    width: 358px;
+    height: 220px;
+}
+.content-box-6 .b_content{
+    width: 358px;
+    height: 90px;
+    position: relative;   
+}
+.content-box-6 .b_content div.info{
+    width: 172px;
+    height: 68px;
+    margin-top: 14px;
+    padding-left: 15px;
+}
+.content-box-6 .b_content button{
+    width: 138px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    background: #6d8;
+    border: none;
+    right: 18px;
+}
+
 
 /*私人导游*/
 .box-flex-3 .content-box-7{
@@ -1493,7 +1523,7 @@ em,i{
 }
 
 /*特色美食*/
-.box-flex-3 .content-box-8 .imgWrap{
+.content-box-8 .imgWrap{
     width: 388px;
     height: 340px;
 }
