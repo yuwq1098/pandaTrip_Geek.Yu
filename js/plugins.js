@@ -77,7 +77,7 @@
             setting,       // 实际的配置
             timestamp,     // 获取当前时间戳
             timeDiff,      // 获取时间差
-            endKill,       // 接收倒计时结束的回调
+            endKill = null,       // 接收倒计时结束的回调
             timer;         // 定时器
        
         
@@ -100,19 +100,12 @@
         timeDiff = setting.endTime - timestamp;
         // 如果时间差过大,就直接取范围上限的值
         timeDiff = setting.isOneDay ? (timeDiff>86400?86399:timeDiff) : (timeDiff > 8640000?8639999:timeDiff);
-        
         endKill = setting.killEndFunc;
         
         // 进入定时器前先渲染一次
         render();
         timer = setInterval(function(){
-            if(timeDiff<0){
-                endKill();
-                defaultEndKill();
-                return false;
-            }
             render();
-            
         },1000);
 
         // 改变时间块的样式
@@ -142,6 +135,11 @@
             p_hour.html("<em>"+hh.substr(0,1) +"</em>"+"<em>"+hh.substr(1,1)+"</em>");
             p_minute.html("<em>"+mm.substr(0,1)+"</em>"+"<em>"+mm.substr(1,1)+"</em>");
             p_second.html("<em>"+ss.substr(0,1)+"</em>"+"<em>"+ss.substr(1,1)+"</em>");
+            if(timeDiff<=0){
+                endKill?endKill():false;
+                defaultEndKill();
+                return false;
+            }
             return timeDiff--;
         }
 
