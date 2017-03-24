@@ -70,7 +70,7 @@
 
     // 限时秒杀
     $.fn.secondsKill = function(option){
-        
+
         var $el,           // 所指定的$DOM
             timeBlock,     // 获取每个时间块
             defaults,      // 默认配置
@@ -80,7 +80,6 @@
             endKill = null,       // 接收倒计时结束的回调
             timer;         // 定时器
        
-        
         $el = $(this);
         var p_hour = $el.find("span.p_hour");
         var p_minute = $el.find("span.p_minute");
@@ -145,6 +144,12 @@
 
         return this;
     }
+
+    // 侧边悬浮条
+    $.fn.suspensionNav = function(option){
+        
+    }
+
     // 首页导航切换（轮播区）
     $.fn.navFunc = function() {
         var $el,

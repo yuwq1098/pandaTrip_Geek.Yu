@@ -362,6 +362,85 @@ em,i{
     font-size: .8em;
 }
 
+/*悬浮导航*/
+#suspensionNav{
+    height: 362px;
+    width: 44px;
+    position: fixed;
+    left: 0;
+    right: 1264px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 99;
+}
+#suspensionNav li{
+    display: block;
+    width: 44px;
+    height: 44px;
+    color: #313536;
+    position: relative;
+    -webkit-perspective:500px;
+}
+#suspensionNav li:not(:last-child){
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 9px;
+}
+#suspensionNav li a{
+    display: block;
+    position: relative;
+    -webkit-transform-style:preserve-3d; 
+    -webkit-transition: .5s; 
+    transition:.5s; 
+    -webkit-transform-origin:center center 22px;
+    -webkit-transform:rotateY(90deg);
+
+}
+#suspensionNav li .positive{
+    display: block;
+    width: 42px;
+    height: 42px;
+    line-height: 43px;
+    border: 1px solid #d2d2d2;
+    background: #fff;
+    text-align: center;
+    display: block;
+    width: 100%;
+    position: absolute;
+    left : 0;
+    -webkit-transform-origin:left;
+    -webkit-transform:rotateY(-90deg);
+    -webkit-backface-visibility:hidden;
+}
+#suspensionNav li .positive i{
+    font-size: 28px;
+    color: #777;
+}
+
+#suspensionNav li .subtitle{
+    display: block;
+    width: 40px;
+    height: 36px;
+    line-height: 18px;
+    padding: 4px 0 4px 4px;
+    text-align: center;
+    background: #33bb99;
+    color: #fff;
+    font-weight: 400px;
+    letter-spacing: 4px;
+    -webkit-transform-origin:left;
+    -webkit-transform:rotateY(0deg) translateZ(44px);
+    -webkit-backface-visibility:hidden;
+    font-family: "宋体",Arial,'Microsoft Yahei';
+    text-shadow: 1px 1px 1px rgba(0,0,0,.35); 
+}
+#suspensionNav li:hover a{
+    -webkit-transform:rotateY(0deg);
+}
+
+
 .w1200-box{
     position: relative;
     width: 100%;
@@ -375,6 +454,7 @@ em,i{
     margin: 0 auto;
 }
 
+/*主要内容*/
 #main-content{
     display: block;
 }
