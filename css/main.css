@@ -68,14 +68,14 @@ hr {
 .box-shadow:hover::after{  
     content:"";  
     position: absolute;  
-    width: 50%;  
+    width: 60%;  
     height: 35%;  
     max-width: 500px;  
     max-height: 80px;  
     z-index:1;  
-    box-shadow: 0 15px 10px rgba(0,0,0,.5);  
+    box-shadow: 0 12px 12px rgba(0,0,0,.5);  
   
-    right:10px;  
+    right:8px;  
     bottom:10px;  
     transform:rotate(3deg);  
 }
@@ -85,15 +85,15 @@ hr {
   position: absolute;  
   content: "";  
   bottom: 32px;  
-  left: 8px;  
+  left: 6px;  
   width: 50%;  
   max-width:300px;  
   top:85%;  
   box-shadow: 0 30px 12px rgba(0,0,0,.5);  
-  transform: rotate(-8deg);  
+  transform: rotate(-6deg);  
 }  
 
-.box-shadow-2:hover::before, .box-shadow-1:hover::after  
+.box-shadow-2:hover::before, .box-shadow-2:hover::after  
 {  
   z-index: 1;  
   position: absolute;  
@@ -782,8 +782,8 @@ em,i{
 }
 /*中心内容盒子容器*/
 .content-panel .content-box-item{
-    height: 3450px;
-    margin-bottom: 50px;
+    height: 3500px;
+    margin-bottom: 40px;
 }
 
 /*热门推送*/
@@ -833,17 +833,7 @@ em,i{
     height: 300px;
     margin-bottom: 25px;
 }
-.content-box-item .box-flex-3{
-    width: 100%;
-    position: relative;
-}
-.box-flex-3 .content-box{
-    float: left;
-    width: 388px;
-}
-.box-flex-3 .content-box:not(:last-child){
-    margin-right: 18px;
-}
+
 /*当季限时优惠*/
 .content-box-item .content-box-1{
     height: 364px;
@@ -1474,6 +1464,39 @@ em,i{
     color: #8ac050;
 }
 
+/*首页盒子分栏*/
+.content-box-item .box-flex-3{
+    width: 100%;
+    position: relative;
+}
+.box-flex-3 .content-box{
+    float: left;
+    width: 388px;
+    height: 404px;
+    margin-bottom: 0;
+}
+.box-flex-3 .content-box:not(:last-child){
+    margin-right: 18px;
+}
+.box-flex-3 .content-box .box-content{
+    height: 340px;
+    position: relative;
+}
+/*炫酷车型*/
+.box-flex-3 .content-box-6{
+    
+}
+
+/*私人导游*/
+.box-flex-3 .content-box-7{
+    
+}
+
+/*特色美食*/
+.box-flex-3 .content-box-8 .imgWrap{
+    width: 388px;
+    height: 340px;
+}
 
 
 /*底部面板*/
