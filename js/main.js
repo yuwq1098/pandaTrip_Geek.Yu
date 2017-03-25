@@ -19,12 +19,25 @@ var mySwiper = new Swiper('#index-carousel', {
 	},
 });
 
-// 初始化加载插件
-$.initJQPlugin().joinUs();
+
+// 获得中心内容的滚动条高度
+var boxItems_scrollTop = $("#box-items").offset().top;
+var boxItems_height = $("#box-items").height();
+// 侧悬浮导航
+$("#suspensionNav").suspensionNav({
+	onShowY : boxItems_scrollTop-80,       // 滚动条起始显示位置
+    unShowY : boxItems_scrollTop+boxItems_height-400,     // 滚动条结束显示位置
+});
+
+
 // 功能导航区域切换调用
 $("#nav-func").navFunc();
+
 // 首页限时优惠倒计时
 $("#count-down").secondsKill({
 	endTime: 2500000000,   //结束时间
 	killEndFunc: null,     //倒计时结束的回调
 });
+
+// 初始化加载插件
+$.initJQPlugin().joinUs();
