@@ -256,7 +256,8 @@
             oScrollVal = Math.floor(boxScrollTopItems[i]-(boxHeightItems[i]/1.8))+80;
             scrollDiff = Math.floor(Math.abs(w_scrollTop-oScrollVal)/1.3);
             speed = (100-Math.floor((Math.sqrt(scrollDiff))))*12 + 200;
-            $("html,body").animate({  
+            // 再次触发时强制溢出dom上的全部动画，然后进行新一轮动画
+            $("html,body").stop().animate({  
                 scrollTop:  oScrollVal+"px",
             }, speed);  
         }
@@ -269,7 +270,6 @@
             $mainFunc,
             $childFunc,
             m_tapLink,
-            isAnimation = true,
             dataFunc;
         
         $el = $(this);
@@ -278,8 +278,6 @@
     
         m_tapLink = $mainFunc.find("ul li .tap-link");
         m_tapLink.on("mouseover",function(e){
-            if(!isAnimation){ return false; }
-            isAnimation = !isAnimation;
             var _this = $(e.currentTarget);
             var _thisParent = _this.parent("li");
 
@@ -288,10 +286,7 @@
             // 控制绑定的data-func显隐
             dataFunc =  _this.attr("data-func");
             var c_itemFunc = $childFunc.find("[data-func="+dataFunc+"]");
-            c_itemFunc.fadeIn(200).siblings(".func-item").fadeOut(150);
-            setTimeout(function(){
-                isAnimation = !isAnimation;
-            },100);
+            c_itemFunc.stop(false,true).fadeIn(300).siblings(".func-item").stop(false,true).fadeOut(150);
         });
         return this;
     }; 
