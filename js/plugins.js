@@ -1,4 +1,10 @@
-// Avoid `console` errors in browsers that lack a console.
+/*
+ * 熊猫旅行的插件脚本 
+ * 作者Geek.Yu 在2017-03-27 10:43:00 创建了它，
+ * 若您对此脚本存在疑问，请联系作者Geek.Yu  qq:1098654043
+ */
+
+// 在浏览器浏览器中排除特定的“控制台”报错
 (function() {
     var method;
     var noop = function () {};

@@ -4,6 +4,7 @@
  * 下面是许多研究的结果在跨浏览器的样式。
  * 熊猫旅行的主要样式表文件
  * 作者Geek.Yu 在2017-03-20 20:30:00 创建了它
+ * email : 1098654043@qq.com
  */
 
 /* ==========================================================================
@@ -387,6 +388,8 @@ em,i{
 html,body{
     -webkit-transition: scrollTop .5s cubic-bezier(.44,.61,0,.97);
     -moz-transition: scrollTop .5s cubic-bezier(.44,.61,0,.97); 
+    -ms-transition: scrollTop .5s cubic-bezier(.44,.61,0,.97); 
+    -o-transition: scrollTop .5s cubic-bezier(.44,.61,0,.97); 
     transition: scrollTop .5s cubic-bezier(.44,.61,0,.97); 
 }
 
@@ -401,7 +404,7 @@ html,body{
 
 /*悬浮导航*/
 #suspensionNav{
-    height: 362px;
+    height: 350px;
     width: 44px;
     position: fixed;
     left: 0;
@@ -420,28 +423,32 @@ html,body{
     position: relative;
     -webkit-perspective:500px;
     -moz-perspective:500px;
+    -ms-perspective:500px;
+    -o-perspective:500px;
     perspective:500px;
 }
 #suspensionNav li:not(:last-child){
     display: block;
     width: 44px;
     height: 44px;
-    margin-bottom: 9px;
+    margin-bottom: 7px;
 }
 #suspensionNav li a{
     display: block;
     position: relative;
+    width: 44px;
+    height: 44px;
     -webkit-transform-style:preserve-3d; 
-    -moz-transform-style:preserve-3d; 
+    -moz-transform-style:preserve-3d;
     transform-style:preserve-3d; 
 
     -webkit-transition: all .3s linear;
-    -moz-transition: all .3s linear; 
+    -moz-transition: all .3s linear;
     transition: all .2s linear; 
 
-    -webkit-transform-origin:center center 22px;
-    -moz-transform-origin:center center 22px;
-    transform-origin:center center 22px;
+    -webkit-transform-origin:center center -22px;
+    -moz-transform-origin:center center -22px;
+    transform-origin:center center -22px;
 
     -webkit-transform:rotateY(90deg);
     -moz-transform:rotateY(90deg);
@@ -450,6 +457,7 @@ html,body{
 #suspensionNav li > *{
     /*隐藏3D元素的背面*/
     -webkit-backface-visibility:hidden;
+    backface-visibility: hidden;
 }
 #suspensionNav li .positive{
     display: block;
@@ -459,21 +467,18 @@ html,body{
     -webkit-box-shadow: 0 0 6px rgba(0,0,0,.25);
     -moz-box-shadow: 0 0 6px rgba(0,0,0,.25);
     box-shadow: 0 0 6px rgba(0,0,0,.25);
-
     background: #fff;
     text-align: center;
     display: block;
-    width: 100%;
     position: absolute;
-    left : 0;
-    -webkit-transform-origin:left;
-    -moz-transform-origin:left;
-    transform-origin:left;
+    left: 0;
+    -webkit-transform-origin:right;
+    -moz-transform-origin:right;
+    transform-origin:right;
     
-    -webkit-transform:rotateY(-90deg);
-    -moz-transform:rotateY(-90deg);
-    transform:rotateY(-90deg);
-    
+    -webkit-transform:rotateY(-90deg) translateZ(44px);
+    -moz-transform:rotateY(-90deg) translateZ(44px);
+    transform:rotateY(-90deg) translateZ(44px);
 }
 #suspensionNav li .positive i{
     font-size: 28px;
@@ -492,15 +497,18 @@ html,body{
     font-weight: 400px;
     letter-spacing: 4px;
     font-family: "宋体",Arial,'Microsoft Yahei';
-    text-shadow: 1px 1px 1px rgba(0,0,0,.35);
-
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    position: absolute;
+    right: 0;
     -webkit-transform-origin:left;
     -moz-transform-origin:left;
     transform-origin:left;
+    
+    -webkit-transform:rotateY(0deg);
+    -moz-transform:rotateY(0deg);
+    transform:rotateY(0deg);
 
-    -webkit-transform:rotateY(0deg) translateZ(44px);
-    -moz-transform:rotateY(0deg) translateZ(44px);
-    transform:rotateY(0deg) translateZ(44px);
+    
 }
 /*背景色区分*/
 #suspensionNav li[data-box='limit-discounts'] .subtitle{
@@ -535,7 +543,7 @@ html,body{
     transform:rotateY(0deg);
 
     -webkit-transition: all .5s cubic-bezier(.44,.61,0,.97);
-    -moz-transition: all .5s cubic-bezier(.44,.61,0,.97); 
+    -moz-transition: all .5s cubic-bezier(.44,.61,0,.97);
     transition: all .5s cubic-bezier(.44,.61,0,.97); 
 }
 #suspensionNav li:hover .positive{
@@ -545,7 +553,6 @@ html,body{
 
     -webkit-transition: -webkit-box-shadow .25s linear;
     -moz-transition: -moz-box-shadow .25s linear;
-    -o-transition: -o-box-shadow .25s linear; 
     transition: box-shadow .25s linear; 
 }
 

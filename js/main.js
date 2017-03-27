@@ -1,3 +1,9 @@
+/*
+ * 熊猫旅行的主要js
+ * 作者Geek.Yu 在2017-03-27 10:43:00 创建了它，
+ * 若您对此js存在疑问，请联系作者Geek.Yu  qq:1098654043
+ */
+
 // 首页轮播图
 var mySwiper = new Swiper('#index-carousel', {
 	autoplay: 5000,     //可选选项，自动滑动
