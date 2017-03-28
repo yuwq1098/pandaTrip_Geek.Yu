@@ -795,7 +795,7 @@ html,body{
 }
 .hotline-wrap >div i{
     font-size: 40px;
-    color: #349039;
+    color: #313536;
 }
 .hotline-wrap p{
     font-family: "宋体",Arial,'Microsoft Yahei';
@@ -949,7 +949,7 @@ html,body{
 .main-func li{
     width: 71px;
     height: 71px;
-    background: rgba(49,53,54,.5);
+    background: rgba(49,53,54,.6);
     -webkit-transition: background .15s linear;
     -moz-transition: background .15s linear;
     transition: background .15s linear;
@@ -1410,26 +1410,21 @@ html,body{
     background: #313536;
     color: #f5f5f5;
     text-align: center;
-    border-radius: 16px 13px 15px 12px;
+    border-radius: 17px;
     font-size: 14px;
     letter-spacing: 4px;
     text-indent: 4px;
-    text-shadow: 2px 2px 2px rgba(0,0,0,.24);
     margin-bottom: 22px;
     float: left;
 }
 .box-sidebar ul li:not(:nth-child(2n+1)){
     margin-left: 14px;
-    border-radius: 13px 15px 12px 14px;
+    border-radius: 17px;
 }
 .box-sidebar ul li a{
     display: block;
 }
-.box-sidebar ul li:hover{
-    -webkit-box-shadow: inset -1px -2px 5px rgba(0,0,0,.12);
-    -moz-box-shadow: inset -1px -2px 5px rgba(0,0,0,.12);
-    box-shadow: inset -1px -2px 5px rgba(0,0,0,.12);
-}
+
 /*首页内容的主要部分布局*/
 .box-info{
     width: 950px;

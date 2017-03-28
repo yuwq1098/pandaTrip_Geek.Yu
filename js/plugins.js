@@ -63,10 +63,6 @@
                 console.log(logZ3 , logZ3_style);
                 return false;   
             },
-            ooo:function(){
-                console.log("aaaa");
-                return false;
-            }
         }
         //创建haorooms的实体
         var myPlugin = new MyPlugin();
