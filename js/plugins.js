@@ -277,11 +277,11 @@
             $childFunc,
             m_tapLink,
             dataFunc;
-        
+
         $el = $(this);
         $mainFunc = $el.find(".main-func");
         $childFunc = $el.find(".child-func");
-    
+
         m_tapLink = $mainFunc.find("ul li .tap-link");
         m_tapLink.on("mouseover",function(e){
             var _this = $(e.currentTarget);
@@ -295,6 +295,106 @@
             c_itemFunc.stop(false,true).fadeIn(300).siblings(".func-item").stop(false,true).fadeOut(150);
         });
         return this;
+    }; 
+
+    // 顶部搜索条下拉组件
+    $.dropDown = function(option) {
+        var $el,           
+            $select,             // select的DOM
+            $surface,            // 触发下拉的DOM
+            optionsItem = [],    // 数组集，options选项集合
+            optionsDOM = '',     // 字符串，options的DOM拼接
+            defaults,            // 默认配置
+            setting,             // 实际的配置
+            $temp = {},          // 模板
+            arrow;               // 箭头
+
+        defaults = { 
+            el: "",                                              // 指定默认的dom
+            bgColor: "#fff",                                     // 背景色
+            speedCurve: "cubic-bezier(0.42, 0.42, 0.28, 1)",     // 速度曲线
+            entityClass: "dropdowm-entity",                      // 指定模拟选择框的类名
+            width: "240px",                                          // 触发下拉的DOM的宽度
+        };
+        // 参数继承，意思是后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。
+        setting = $.extend(defaults,option);
+
+        $el = $(setting.el);
+        // 一般$传入的对象都需要[0]
+        $select = $el.find("select")[0];
+
+        for (var i = 0; i<$select.length; i++){
+            optionsItem.push($select.options[i].text+"||"+$select.options[i].value);
+        }
+        
+        $temp.select = '<section class="'+defaults.entityClass+'"><ul>{options}</ul></section>';
+        $temp.option = '<li value="{value}">{text}</li>';
+        
+        // 拼接虚拟选择框的DOM
+        function jointDOM(item){
+            var _selectTemp,
+                _optTemp,
+                _value,
+                _text;
+            
+            if(!item||item.length<=0) return null; 
+            for(var i = 0; i<item.length;i++){
+                _selectTemp = $temp.select;
+                _optTemp = $temp.option;
+                _value = item[i].replace(/.*[|^2]/,'');
+                _text = item[i].replace(/[|^2].*/,'');
+                
+                _optTemp = (_optTemp.replace('{value}',_value)).replace('{text}',_text);
+                optionsDOM = optionsDOM + _optTemp;
+            }
+            return _selectTemp.replace('{options}',optionsDOM);
+        }
+        
+        // 获取虚拟选择框的DOM
+        var innerDOM = jointDOM(optionsItem);
+        $el.append(innerDOM);
+
+        $surface = $el.find(".dropdown-surface");
+        
+        arrow = $surface.find("i");
+        var opened = true;
+
+        var $entityDOM = $("."+defaults.entityClass);
+        $entityDOM.css({
+            width: setting.width,
+        })
+        
+        $surface.on("click",function(){
+            if(!innerDOM) return false;
+            if(opened){
+                arrow.addClass("active");
+            }else{
+                arrow.removeClass("active");
+            }   
+            $entityDOM.slideToggle(300,function(){
+                opened = !opened;
+            }); 
+        });
+        
+        var $entityDOM_li = $entityDOM.find("li");
+        $entityDOM_li.on("click",function(){
+            var $this = $(this);
+            var _text = $this.text();
+            var _value = $this.val();
+            
+            $surface.find("em").text(_text);
+            $surface.attr("value",_value);
+            if(opened){
+                arrow.addClass("active");
+            }else{
+                arrow.removeClass("active");
+            }   
+            $entityDOM.slideToggle(300,function(){
+                opened = !opened;
+            }); 
+        });
+        
+
     }; 
 
 })(jQuery); 

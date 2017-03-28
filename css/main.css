@@ -322,6 +322,17 @@ textarea {
     resize: vertical;
 }
 
+/*
+ * DOM元素的显隐
+ */
+
+.domShow{
+    display: block;
+}
+.domHide{
+    display: none;
+}
+
 /* ==========================================================================
    浏览器升级提示 的样式
    ========================================================================== */
@@ -507,7 +518,6 @@ html,body{
     -webkit-transform:rotateY(0deg);
     -moz-transform:rotateY(0deg);
     transform:rotateY(0deg);
-
     
 }
 /*背景色区分*/
@@ -656,31 +666,108 @@ html,body{
     color: #313536;
 }
 .head-search .dropdown-menu{
-    width: 88px;
+    width: 98px;
     height: 38px;
     line-height: 38px;
-    text-align: center;
-    padding-left: 5px; 
     cursor: pointer;
 }
 .head-search .dropdown-menu >*{
     cursor: pointer;
 }
-.dropdown-menu span{
-    font-size: 14px;
+.dropdown-surface,
+.dropdown-surface > *{
+    cursor: pointer;
 }
-.dropdown-menu i{
-    font-size: 11px;
+.dropdown-menu .dropdown-surface{
+    position: relative;
+    display: block;
+    height: 100%;
+    padding-left: 5px; 
+    text-align: center;
 }
+.dropdown-surface em{
+    font-size: 15px;
+    padding-right: 12px;
+}
+.dropdown-surface i{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    line-height: 20px;
+    display: inline-block;
+    font-size: 20px;
+    -webkit-transform-origin: center 47.5%;
+    -moz-transform-origin: center 47.5%;
+    -o-transform-origin: center 47.5%;
+    transform-origin: center 47.5%;
 
+    -webkit-transition: -webkit-transform .18s cubic-bezier(.05,.2,.6,1);
+    -moz-transition: -moz-transform .18s cubic-bezier(.05,.2,.6,1);
+    -o-transition: -o-transform .18s cubic-bezier(.05,.2,.6,1);
+    transition: transform .18s cubic-bezier(.05,.2,.6,1);
+}
+.dropdown-surface i.active{
+    -webkit-transform: rotateZ(-180deg);
+    -moz-transform: rotateZ(-180deg);
+    -o-transform: rotateZ(-180deg);
+    transform: rotateZ(-180deg);
+    -webkit-transition: -webkit-transform .25s cubic-bezier(.05,.2,.6,1);
+    -moz-transition: -moz-transform .25s cubic-bezier(.05,.2,.6,1);
+    -o-transition: -o-transform .25s cubic-bezier(.05,.2,.6,1);
+    transition: transform .25s cubic-bezier(.05,.2,.6,1);
+}
+.dropdown-menu .dropdowm-entity{
+    width: 240px;
+    position: absolute;
+    top: 52px;
+    z-index: 99;
+    background-color: #fff;
+    border: 1px solid #313536;
+    -webkit-box-shadow: 2px 2px 12px rgba(0,0,0,.5);
+    -moz-box-shadow: 2px 2px 12px rgba(0,0,0,.5);
+    box-shadow: 2px 2px 12px rgba(0,0,0,.5);
+    border-radius: 0 0 12px 12px;
+    cursor: default;
+    display: none;
+}
+.dropdowm-entity ul{
+    padding: 8px;
+    color: #313536;
+    cursor: default;
+}
+.dropdowm-entity ul li{
+    height: 38px;
+    line-height: 38px;
+    padding: 0 10px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.dropdowm-entity ul li:hover{
+    background-color: rgba(40,144,46,.08);   
+}
+.dropdowm-entity ul li:active{
+    background-color: rgba(40,144,46,.10);
+    -webkit-box-shadow: inset 0 0 15px rgba(0,0,0,.03);
+    -moz-box-shadow: inset 0 0 15px rgba(0,0,0,.03);   
+    box-shadow: inset 0 0 15px rgba(0,0,0,.03);
+}
+.dropdowm-entity ul li:not(:last-child){
+    margin-bottom: 5px;
+}
 .head-search input[type='text']{
-    width: 305px;
-    height: 36px;
-    line-height: 32px;
+    width: 295px;
+    height: 35px;
+    line-height: 28px;
     right: 49px;
     border: none;
     padding: 0 12px 0 5px;
     color: #313536;
+    top: -1px;
     font-size: 13px;
 }
 .head-search button{

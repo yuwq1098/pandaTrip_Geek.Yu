@@ -35,6 +35,11 @@ $("#suspensionNav").suspensionNav({
     unShowY : boxItems_scrollTop+boxItems_height-400,     // 滚动条结束显示位置
 });
 
+// 顶部搜索条下拉组件
+$.dropDown({
+	el:"#main-dropdown",
+	width: "200px",
+});
 
 // 功能导航区域切换调用
 $("#nav-func").navFunc();

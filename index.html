@@ -64,17 +64,27 @@
                     <section class="header-main w1200-box clearfix">
 
                         <div class="w1200">
-
                             <div class="head-wrap">
                                 <section class="logo-wrap imgWrap vertical-layout">
                                     <img src="img/panda-logo-equal.png" art="熊猫旅行LOGO"/>
                                 </section><!-- logo -->
 
-                                <section class="head-search complete-center">
-                                    <div class="dropdown-menu">
-                                        <section class="spacing-medium"><span>全部</span><i class="iconfont icon-chevrondown"></i>
+                                <section class="head-search complete-center user-unselect">
+                                    <div class="dropdown-menu" id="main-dropdown" data-func="dropdown">
+                                        
+                                        <section class="dropdown-surface">
+                                            <em class="spacing-medium">全部</em>
+                                            <i class="iconfont icon-angledown"></i>
                                         </section>
-                                        <section></section>
+                                        <select class="domHide">
+                                                <option value="0">全部</option>
+                                                <option value="1">目的地</option>
+                                                <option value="2">景点</option>
+                                                <option value="3">门票</option>
+                                                <option value="4">酒店</option>
+                                                <option value="5">攻略</option>
+                                                <option value="6">线路</option>
+                                        </select>
                                     </div>
                                     <input type="text" class="vertical-layout spacing-small" placeholder="请输入目的地、主题或关键字" />
                                     <button id="head-search-btn" class="vertical-layout">
