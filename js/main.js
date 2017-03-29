@@ -50,5 +50,40 @@ $("#count-down").secondsKill({
 	killEndFunc: null,     //倒计时结束的回调
 });
 
+// 必游景点tap内容切换
+$.boxNavTap({
+    el: "section[data-box='must-see']",
+    tempType: 1,
+    oJson: "mustSee",
+});
+
+// 热门周边tap内容切换
+$.boxNavTap({
+    el: "section[data-box='popular-around']",
+    tempType: 2,
+    oJson: "popularAround",
+});
+
+// 当地酒店tap内容切换
+$.boxNavTap({
+    el: "section[data-box='local-hotel']",
+    tempType: 1,
+    oJson: "localHotel",
+});
+
+// 国内游tap内容切换
+$.boxNavTap({
+    el: "section[data-box='domestic-travel']",
+    tempType: 2,
+    oJson: "domesticTravel",
+});
+
+// 首页box_content图片懒加载
+$(".box-content div.imgWrap img").imgLazyLoad();
+
+// 入住人头像图片懒加载
+$(".content-box-7 .p_icon_list img").imgLazyLoad();
+
+
 // 初始化加载插件
 $.initJQPlugin().joinUs();

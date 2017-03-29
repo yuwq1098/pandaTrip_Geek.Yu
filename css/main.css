@@ -1333,7 +1333,7 @@ html,body{
 .box-content.box-type01 .subtitle{
     margin-top: 8px;
     line-height: 22px;
-    max-height: 44px;
+    height: 44px;
     overflow: hidden;
     font-size: 14px;
     letter-spacing: 1px;
@@ -1429,7 +1429,7 @@ html,body{
 .box-info{
     width: 950px;
     height: 480px;
-    position: relative;
+    position: absolute;
 }
 .box-layout{
     width: 914px;
@@ -1599,7 +1599,8 @@ html,body{
 }
 .content-box-3 .box-layout h4.subtitle{
     line-height: 22px;
-    max-height: 44px;
+    height: 44px;
+    overflow: hidden;
 }
 .content-box-3 .box-layout p.info{
     margin-top: 3px;
@@ -1728,7 +1729,8 @@ html,body{
 }
 .content-box-5 .box-layout h4.subtitle{
     line-height: 22px;
-    max-height: 44px;
+    height: 44px;
+    overflow: hidden;
 }
 .content-box-5 .box-layout p.info{
     margin-top: 3px;
@@ -1890,8 +1892,9 @@ html,body{
     margin-left: 5px; 
 }
 .box-layout-2 .p_box_list .p_content .subtitle{
-    max-height: 36px;
+    height: 36px;
     line-height: 18px;
+    overflow: hidden;
     font-size: 13px;
     color: #777;
     letter-spacing: 1px;
@@ -2121,6 +2124,7 @@ html,body{
 .links-wrap >li p.explain{
     letter-spacing: .15em;
     line-height: 28px;
+    height: 56px;
     max-height: 84px;
     overflow: hidden;
     color: #777;

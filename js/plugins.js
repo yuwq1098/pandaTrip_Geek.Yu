@@ -293,6 +293,23 @@
         return this;
     }; 
 
+    // 图片懒加载
+    $.fn.imgLazyLoad = function(option) {
+        var $el;
+        
+        defaults = { 
+            imgDomItem: [],                        // 需要懒加载的DOM集合                                         // 指定默认的dom
+            effect : "fadeIn",                     // 切换动画
+        };
+        // 参数继承，意思是后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。
+        setting = $.extend(defaults,option);
+
+        $el = $(this);
+        $el.lazyload({
+            effect : setting.effect,
+        });
+    }
+
     // 顶部搜索条下拉组件
     $.dropDown = function(option) {
         var $el,           
@@ -392,5 +409,130 @@
         
 
     }; 
+
+    // 首页内容区tap切换
+    $.boxNavTap = function(option) {
+
+        var $el,           
+            $boxInfo,         // box-content里的信息,这里指向到ul节点
+            tempItem = {},       // 集合，储存不同类型的模板
+            defaults,            // 默认配置
+            liItemDOM = '',      // 字符串，li的DOM拼接
+            setting;             // 实际的配置
+        
+        tempItem = {
+            t1  :   '<li><a href="javascript:;">\
+                            <div class="imgWrap">\
+                                <img src="img/loading_img.jpg" data-original="{:images}" alt="{:name}"/>\
+                            </div>\
+                            <section class="b_content">\
+                                <p class="info clearfix">\
+                                    <span class="pull-left">{:name}</span>\
+                                </p>\
+                                <span class="vital unit-money">\
+                                    <em>{:price_min}</em>起\
+                                </span>\
+                            </section>\
+                        </a></li>',
+
+            t2  :   '<li><a href="javascript:;">\
+                            <div class="imgWrap">\
+                                <img src="img/loading_img.jpg" data-original="{:images}" alt="{:name}"/>\
+                            </div>\
+                            <section class="b_content">\
+                                <h4 class="subtitle">{:name}</h4>\
+                                <p class="info pull-left">{:vbase}出发</p>\
+                                <span class="vital unit-money">\
+                                    <em>{:price_min}</em>起\
+                                </span>\
+                            </section>\
+                        </a></li>',
+        }
+
+        defaults = { 
+            el: "",                         // 指定默认的dom
+            id: "id",                       // 指定切换条参数标识
+            tempType: 1,                    // 模板类型
+            oJson: "",                      // 数据对象
+        };
+        // 参数继承，意思是后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。
+        setting = $.extend(defaults,option);
+
+        $el = $(setting.el);
+        // box-content里的信息,这里指向到ul节点
+        $boxInfo = $el.find(".box-info");
+
+        var boxDom = '<section class="clearfix box-layout complete-center"><ul>{:dom}</ul></section>';
+        var $li_navbar = $el.find(".h_navbar li");
+        $li_navbar.on("click",function(){
+            
+            var _this = $(this),
+                param,         // 获取所点击tap带的值参
+                realUrl,       // 真正起作用的url
+                data,          // ajax获取的数据集
+                innerDOM;      // 新的ul内容DOM
+            
+            // 如果点击li已经是被触发状态，那么就跳出
+            if(_this.hasClass("active")) return false;
+            // 获取值参
+            param = _this.find("a").attr("rel");
+            data = $$finalData[setting.oJson][("d"+param).toString()][0];
+            if(!data||data.length<=0){
+                // 如果没有数据时
+                $boxInfo.html("");
+            }else{
+                // 获取拼接后的的ul内容DOM
+                innerDOM = jointDOM(data);
+                // console.log(innerDOM);
+                $boxInfo.html(innerDOM);
+
+                // 重新启用图片懒加载
+                $boxInfo.find("div.imgWrap img").imgLazyLoad({
+                    effect : "fadeIn",
+                });
+            };
+
+            _this.addClass("active").siblings("li").removeClass("active");
+            
+        });
+
+        // 拼接ul内容DOM
+        function jointDOM(data){
+
+            var tempType = setting.tempType,     // 获得模板类型
+                _liTemp,                         // 接收li的模板
+                tempNo,                          // 获得tempItem的属性键
+                _href,               // 对应字段 :href           
+                _images,             // 对应字段 :images
+                _name,               // 对应字段 :name
+                _vbase,              // 对应字段 :vbase
+                _price_min;          // 对应字段 :price_min
+            
+            // 删除dom记录
+            liItemDOM = '';
+            tempNo = ("t"+tempType).toString();
+           
+            for(var i = 0; i<data.length;i++){
+
+                _liTemp = tempItem[tempNo];
+                var _data  = data[i];
+                                    
+                _images    = _data.images;         
+                _name      = _data.name;             
+                _vbase     = _data.vbase;               
+                _price_min = _data.price_min;   
+                
+                // 把所有相应字段匹配掉
+                _liTemp  = _liTemp.replace(/{:images}/g,_images);
+                _liTemp  = _liTemp.replace(/{:name}/g,_name);
+                _liTemp  = _liTemp.replace(/{:vbase}/g,_vbase);
+                _liTemp  = _liTemp.replace(/{:price_min}/g,_price_min);
+
+                liItemDOM = liItemDOM + _liTemp;
+            }
+            return boxDom.replace(/{:dom}/g,liItemDOM);
+        }
+
+    };
 
 })(jQuery); 
