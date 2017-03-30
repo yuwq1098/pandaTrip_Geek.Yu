@@ -298,7 +298,7 @@
         var $el;
         
         defaults = { 
-            imgDomItem: [],                        // 需要懒加载的DOM集合                                         // 指定默认的dom
+            imgDomItem: [],                        // 需要懒加载的DOM集合             
             effect : "fadeIn",                     // 切换动画
         };
         // 参数继承，意思是后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。

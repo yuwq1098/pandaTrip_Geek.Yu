@@ -755,9 +755,9 @@ html,body{
 .link-support .f_box03 p em{
     position: relative;
     font-size: 14px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 700;
-    color: #fb3e3e;
+    color: #313536;
 }
 
 /*相应用户悬浮及其他操作*/
