@@ -625,19 +625,194 @@ html,body{
     display: inline-block;
     margin-right: 12px;
 }
-.link-support a{
-    margin-left: 8px;
+
+/*顶部功能支持*/
+.top-support{
+    z-index: 99;
+    position: absolute;
 }
-.link-support i{
-    color: #a5a5a5;
-}
-.link-support i[data-icon='phone']{
+.link-support .link-item{
     display: inline-block;
-    color: #349039;
-    -webkit-transform: translateY(1px);
-    -moz-transform: translateY(1px);
-    transform: translateY(1px);
+    position: relative;
+    margin-right: -4px;
 }
+.link-support .link-item .subtitle{
+    position: relative;
+    text-align: center;
+    padding-left: 6px;
+    cursor: pointer;
+}
+.link-item .subtitle i:last-child{
+    display: inline-block;
+    -webkit-transform-origin: center 47.5%;
+    -moz-transform-origin: center 47.5%;
+    -o-transform-origin: center 47.5%;
+    transform-origin: center 47.5%;
+
+    -webkit-transition: -webkit-transform .18s cubic-bezier(.05,.2,.6,1);
+    -moz-transition: -moz-transform .18s cubic-bezier(.05,.2,.6,1);
+    -o-transition: -o-transform .18s cubic-bezier(.05,.2,.6,1);
+    transition: transform .18s cubic-bezier(.05,.2,.6,1);
+}
+.link-support .link-item .st_width01{
+    width: 80px;
+}
+.link-support .link-item .st_width02{
+    width: 96px;
+}
+.link-support .link-item .st_width03{
+    width: 52px;
+}
+
+.link-support .link-item .float_box{
+    display: none;
+    z-index: 99;
+}
+
+/*顶部功能内容一*/
+.link-support .link-item .f_box01{
+    width: 78px;
+    min-height: 25px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    padding: 4px;
+    text-align: left;
+    background-color: #fff;
+}
+.link-support .link-item .f_box01 li{
+    height: 26px;
+    line-height: 26px;
+    padding-left: 4px;
+}
+.link-support .link-item .f_box01 li a{
+    color: #777;
+    display: block;
+}
+.link-support .link-item .f_box01 li:not(:last-child){
+    margin-bottom: 2px;
+}
+.link-support .link-item .f_box01 li:hover{
+    background: rgba(40,144,46,.08);
+}
+.link-support .link-item .f_box01 li:active{
+    background: rgba(40,144,46,.12);
+}
+.link-support .link-item .f_box01 li:active a{
+    color: #313536;
+}
+
+/*顶部功能内容二*/
+.link-support .link-item .f_box02{
+    width: 300px;
+    height: 130px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    text-align: left;
+    background-color: #fff;
+}
+.link-support .f_box02 .f_box_info{
+    width: 155px;
+    height: 90px;
+    left: 18px;
+}
+.link-support .f_box02 .f_box_info h4{
+    line-height: 32px;
+    height: 32px;
+    margin-top: 5px;
+    color: #fb3e3e;
+    font-size: 13px;
+    font-weight: 700;
+}
+.link-support .f_box02 .f_box_info p.info{
+    line-height: 22px;
+    padding-left: 4px;
+}
+.link-support .f_box02 .imgWrap{
+    width: 108px;
+    height: 108px;
+    right: 10px;
+}
+
+/*顶部功能内容三*/
+.link-support .link-item .f_box03{
+    width: 250px;
+    min-height: 40px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    padding: 8px 10px;
+    text-align: left;
+    background-color: #fff;
+}
+.link-support .f_box03 p{
+    line-height: 24px;
+}
+.link-support .f_box03 p span::after{
+    content: "：";
+}
+.link-support .f_box03 p em{
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #fb3e3e;
+}
+
+/*相应用户悬浮及其他操作*/
+.link-support .link-item:hover .float_box{
+    display: block;
+}
+.link-support .link-item:hover .subtitle,
+.link-support .link-item:hover .float_box{
+    box-shadow: 0 0 10px rgba(0,0,0,.35);
+    background: #fff;
+}
+.link-item:hover .subtitle i:last-child{
+    display: inline-block;
+    -webkit-transform: rotateZ(-180deg);
+    -moz-transform: rotateZ(-180deg);
+    -o-transform: rotateZ(-180deg);
+    transform: rotateZ(-180deg);
+    -webkit-transition: -webkit-transform .25s cubic-bezier(.05,.2,.6,1);
+    -moz-transition: -moz-transform .25s cubic-bezier(.05,.2,.6,1);
+    -o-transition: -o-transform .25s cubic-bezier(.05,.2,.6,1);
+    transition: transform .25s cubic-bezier(.05,.2,.6,1);
+}
+.link-support .link-item:hover .float_box::after{
+    content: "";
+    display: block;
+    height: 6px;
+    position: absolute;
+    top: -6px;
+    right: 0;
+    background: #fff;
+}
+.link-support .link-item:hover .float_box::before{
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+    right: 0;
+    background: #e2e2e2;
+}
+.link-support .link-item:hover .f_box_width01::after,
+.link-support .link-item:hover .f_box_width01::before{
+    width: 86px;
+}
+.link-support .link-item:hover .f_box_width02::after,
+.link-support .link-item:hover .f_box_width02::before{
+    width: 102px;
+}
+.link-support .link-item:hover .f_box_width03::after,
+.link-support .link-item:hover .f_box_width03::before{
+    width: 58px;
+}
+
+
 
 /*顶部主要内容*/
 .header-main{
