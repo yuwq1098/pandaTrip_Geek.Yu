@@ -1015,12 +1015,17 @@ html,body{
 
 /*导航条容器*/
 .head-navbar .navbar-wrap{
-    width: 950px;
+    width: 920px;
     height: 44px;
     line-height: 44px;
-    left: 250px;
+    left: 280px;
     padding-left: 15px;
     cursor: default;
+}
+.head-navbar .navbar-wrap-1{
+    width: 1060px;
+    left: 0;
+    right: 0;
 }
 .head-navbar .navbar-wrap li{
     display: inline-block;
@@ -1028,7 +1033,7 @@ html,body{
     font-size: 14px;
     letter-spacing: 3px;
     text-indent: 3px;
-    padding: 0 12px;
+    padding: 0 20px;
     position: relative;
 }
 .head-navbar li.nav-words-2{

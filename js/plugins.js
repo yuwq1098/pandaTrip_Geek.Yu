@@ -354,8 +354,8 @@
             for(var i = 0; i<item.length;i++){
                 _selectTemp = $temp.select;
                 _optTemp = $temp.option;
-                _value = item[i].replace(/.*[|^2]/,'');
-                _text = item[i].replace(/[|^2].*/,'');
+                _value = item[i].replace(/.*[||]/,'');
+                _text = item[i].replace(/[||].*/,'');
                 
                 _optTemp = (_optTemp.replace('{value}',_value)).replace('{text}',_text);
                 optionsDOM = optionsDOM + _optTemp;
