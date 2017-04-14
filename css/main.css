@@ -2607,7 +2607,7 @@ section.minfo_minPrice span.unit-money::before{
     letter-spacing: 1px;
 }
 section.appraise .content-inner{
-    background-color: #eaf3f0;
+    background-color: #edf5ed;
     height: 130px;
     padding: 8px 12px;
 }
@@ -2623,6 +2623,7 @@ section.appraise .score-box span{
 section.appraise .score-box span::after{
     content: "|";
     margin-left: 4px;
+    color: #959595;
 }
 section.appraise .score-box span i.iconfont{
     font-size: 22px;
@@ -2647,6 +2648,16 @@ section.appraise .appraise-box h4 a{
 section.appraise .appraise-box p{
     line-height: 22px;
 }
+
+/*详情页相关信息*/
+.detail-page-panel .intact-content{
+    margin-top: 25px;
+}
+section.intact-content .tab-content-box{
+    min-height: 200px;
+    margin-bottom: 25px;
+}
+
 
 
 
