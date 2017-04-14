@@ -3,18 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>熊猫旅行</title>
+        <title>熊猫旅行--本地特产--详情页</title>
         <meta name="description" content="熊猫旅行，提供最最优质的本地旅游服务。">
         <meta name="author" content="Geek.Yu,email:1098654043@qq.com">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="">
-        <link rel="stylesheet" href="font/iconfont.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="js/vendor/swiper/swiper.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/app-responsive.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="../font/iconfont.css">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../js/vendor/swiper/swiper.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/app-responsive.css">
+        <!-- Modernizr使支持HTML5和CSS3的浏览器可以充分利用HTML5和CSS3的特性进行开发，同时又不会牺牲其他不支持这些新技术的浏览器的控制。 -->
+        <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -66,7 +66,7 @@
                                                 </p>           
                                             </div>
                                             <section class="imgWrap vertical-layout">
-                                                <img src="img/download-code.jpg" alt="关注微信" />
+                                                <img src="../img/download-code.jpg" alt="关注微信" />
                                             </section>
                                         </section>
                                     </section>
@@ -81,7 +81,7 @@
                                                 </p>           
                                             </div>
                                             <section class="imgWrap vertical-layout">
-                                                <img src="img/download-code.jpg" alt="关注微信" />
+                                                <img src="../img/download-code.jpg" alt="关注微信" />
                                             </section>
                                         </section>
                                     </section>
@@ -149,31 +149,12 @@
                         <div class="w1200">
                             <div class="head-wrap">
                                 <section class="logo-wrap imgWrap vertical-layout">
-                                    <img src="img/panda-logo-equal.png" art="熊猫旅行LOGO"/>
+                                    <img src="../img/panda-logo-equal.png" art="熊猫旅行LOGO"/>
                                 </section><!-- logo -->
 
-                                <section class="head-search complete-center user-unselect">
-                                    <div class="dropdown-menu" id="main-dropdown" data-func="dropdown">
-                                        
-                                        <section class="dropdown-surface">
-                                            <em class="spacing-medium">全部</em>
-                                            <i class="iconfont icon-angledown"></i>
-                                        </section>
-                                        <select class="domHide">
-                                                <option value="0">全部</option>
-                                                <option value="1">目的地</option>
-                                                <option value="2">景点</option>
-                                                <option value="3">门票</option>
-                                                <option value="4">酒店</option>
-                                                <option value="5">攻略</option>
-                                                <option value="6">线路</option>
-                                        </select>
-                                    </div>
-                                    <input type="text" class="vertical-layout spacing-small" placeholder="请输入目的地、主题或关键字" />
-                                    <button id="head-search-btn" class="vertical-layout">
-                                        <i class="iconfont icon-Searchffffffpx icon-medium"></i>
-                                    </button>
-                                </section><!-- 头部搜索 -->
+                                <section class="city-switch vertical-layout">
+                                    <i class="iconfont icon-locationfill"></i><em>南昌站</em>
+                                </section><!-- 城市切换 -->
 
                                 <section class="hotline-wrap vertical-layout">
                                     <div class="vertical-layout">
@@ -186,73 +167,32 @@
                             </div><!-- 头部内容区 -->
 
                             <div class="head-navbar">
-                                <section class="orientation spacing-small user-unselect">
-                                    <i class="iconfont icon-locationfill"></i><em>南昌站</em>
-                                </section><!-- 定位 -->
-                                <section class="navbar-wrap vertical-layout">
+                                <section class="navbar-wrap navbar-wrap-1 vertical-layout">
                                     <ul class="clearfix">
                                         <li class="nav-words-2">
-                                            <a href="javascript:;" class="tap-link">首页</a></li>
-                                        <li class="nav-words-4 active">
-                                            <a href="javascript:;" class="tap-link">必游景点</a></li>
+                                            <a href="../index.html" class="tap-link">首页</a></li>
                                         <li class="nav-words-4">
-                                            <a href="javascript:;" class="tap-link">当地酒店</a></li>
+                                            <a href="mustSee-details.html" class="tap-link">必游景点</a></li>
                                         <li class="nav-words-4">
-                                            <a href="javascript:;" class="tap-link">热门周边</a></li>
+                                            <a href="localHotel-details.html" class="tap-link">当地酒店</a></li>
+                                        <li class="nav-words-4">
+                                            <a href="popularAround-details.html" class="tap-link">热门周边</a></li>
                                         <li class="nav-words-3">
-                                            <a href="javascript:;" class="tap-link">国内游</a></li>
+                                            <a href="domesticTravel-details.html" class="tap-link">国内游</a></li>
                                         <li class="nav-words-4">
-                                            <a href="javascript:;" class="tap-link">地道美食</a></li>
-                                        <li class="nav-words-2">
+                                            <a href="authenticCuisine-details.html" class="tap-link">地道美食</a></li>
+                                        <li class="nav-words-2 active">
                                             <a href="javascript:;" class="tap-link">特产</a></li>
                                         <li class="nav-words-2">
-                                            <a href="javascript:;" class="tap-link">导游</a></li>
+                                            <a href="guide-details.html" class="tap-link">导游</a></li>
                                         <li class="nav-words-2">
-                                            <a href="javascript:;" class="tap-link">租车</a></li>
+                                            <a href="rentCar-details.html" class="tap-link">租车</a></li>
                                     </ul>
                                 </section><!-- 导航条容器 -->
                             </div><!-- 头部导航区 -->
                         </div>
                     </section><!-- 主要内容区 -->
                 </div><!-- 页眉面板 -->
-
-                <div class="carousel-panel">
-                    
-                    <div class="swiper-container" id="index-carousel">
-
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="img/figure01_tiny.jpeg" alt=""/>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="img/figure02_tiny.jpeg" alt=""/>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="img/figure03_tiny.jpeg" alt=""/>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="img/figure04_tiny.jpeg" alt=""/>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="javascript:;">
-                                    <img src="img/figure05_tiny.jpeg" alt=""/>
-                                </a>
-                            </div>
-                        </div><!-- 图片容器 -->
-
-                        <div class="swiper-pagination"></div><!-- 引入分页器 -->
-
-                    </div><!-- swiper轮播容器 -->
-
-                </div><!-- 轮播图面板 -->
 
                 <div class="content-panel w1200-box clearfix">
                    
@@ -263,12 +203,12 @@
                     <div class="foot-content w1200-box">
                         <section class="w1200">
                             <div class="service-support imgWrap">
-                                <img src="img/service-support.png" alt="服务支持"/>
+                                <img src="../img/service-support.png" alt="服务支持"/>
                             </div><!-- 服务支持 -->
                             <div class="website-info">
                                 <section class="focus vertical-layout left">
                                     <div class="logo-wrap imgWrap">
-                                        <img src="img/panda-logo-equal.png" alt="" />
+                                        <img src="../img/panda-logo-equal.png" alt="" />
                                     </div>
                                     <p class="info spacing-medium">关注我们</p>
                                     <section class="focus-way">
@@ -330,7 +270,7 @@
                                 </section><!-- 站点链接 -->
                                 <section class="download vertical-layout right">
                                     <div class="code-wrap">
-                                        <img src="img/download-code.jpg" alt="熊猫旅行手机app下载码" />
+                                        <img src="../img/download-code.jpg" alt="熊猫旅行手机app下载码" />
                                     </div>
                                     <p class="info spacing-small">扫码下载手机版</p>
                                 </section><!-- 扫码下载 -->
@@ -345,23 +285,23 @@
                                 <ul>
                                     <li>
                                         <a href="javascript:;" class="tap-lik">
-                                            <img src="img/license01.png" alt="营业执照1"/>
+                                            <img src="../img/license01.png" alt="营业执照1"/>
                                         </a></li>
                                     <li>
                                         <a href="javascript:;" class="tap-lik">
-                                            <img src="img/license02.png" alt="营业执照2"/>
+                                            <img src="../img/license02.png" alt="营业执照2"/>
                                         </a></li>
                                     <li>
                                         <a href="javascript:;" class="tap-lik">
-                                            <img src="img/license03.png" alt="营业执照3"/>
+                                            <img src="../img/license03.png" alt="营业执照3"/>
                                         </a></li>
                                     <li>
                                         <a href="javascript:;" class="tap-lik">
-                                            <img src="img/license04.png" alt="营业执照4"/>
+                                            <img src="../img/license04.png" alt="营业执照4"/>
                                         </a></li>
                                     <li>
                                         <a href="javascript:;" class="tap-lik">
-                                            <img src="img/license05.png" alt="营业执照5"/>
+                                            <img src="../img/license05.png" alt="营业执照5"/>
                                         </a></li>
                                 </ul>
                             </div>
@@ -389,15 +329,14 @@
 
         <!-- 用cdn引入jq，当cdn不稳定时，使用本地的jq -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
         
         <!-- 引入懒加载插件 -->
-        <script src="js/vendor/lazyload.min.js"></script>
+        <script src="../js/vendor/lazyload.min.js"></script>
         <!-- 引入轮播图插件 -->
-        <script src="js/vendor/swiper/swiper.jquery.min.js"></script>
+        <script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
+        <!-- 加载熊猫旅行的插件脚本 -->
+        <script src="../js/plugins.js"></script>
         
-        <!-- 加载静态数据 -->
-        <script src="js/dataItem.js"></script>
-        <script src="js/plugins.js"></script>
     </body>
 </html>
