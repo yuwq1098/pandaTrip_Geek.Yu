@@ -87,8 +87,7 @@ hr {
     -o-transform:rotate(3deg);  
     transform:rotate(3deg);  
 }
-.box-shadow-1:hover::before, .box-shadow-1:hover::after  
-{  
+.box-shadow-1:hover::before, .box-shadow-1:hover::after{  
     z-index: 1;  
     position: absolute;  
     content: "";  
@@ -566,17 +565,13 @@ html,body{
     transition: box-shadow .25s linear; 
 }
 
-
+/*1200px布局*/
 .w1200-box{
     position: relative;
     width: 100%;
 }
 .w1200{
-    min-width: 1200px;
     width: 1200px;
-    position: absolute;
-    left: 0;
-    right: 0;
     margin: 0 auto;
 }
 
@@ -2419,10 +2414,239 @@ html,body{
 }
 
 
+/*熊猫旅行的详情页*/
+.detail-page-panel{
+    min-height: 700px;
+}
+/*面包屑*/
+.crumbs-box{
+    height: 42px;
+    line-height: 42px;
+    font-size: 12px;
+}
+.crumbs-box > *:not(.explain-title):not(em){
+    margin-right: 10px;
+    display: inline-block;
+}
+.crumbs-box span.explain-title{
+    margin-right: 5px;
+}
+.crumbs-box .thorough-pointer::after{
+    content: ">";
+    margin-left: 6px;
+}
 
+/*图文详情*/
+.image-text-content{
+    height: 430px;
+    background: #fff;
+    position: relative;
+}
+.image-text-content .focus-container{
+    width: 525px;
+    height: 400px;
+    left: 15px;
+}
+.focus-container section.view .swiper-container{
+    width: 100%;
+    height: 325px;
+}
+section.view .swiper-container >a{
+    width: 24px;
+    height: 76px;
+    line-height: 76px;
+    text-align: center;
+    background: rgba(255,255,255,.5);
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    margin-top: -38px;
+    display: none;
+}
+section.view .swiper-container >a i.iconfont{
+    color: #349039;
+    font-size: 22px;
+}
+section.view .swiper-container >a.arrow-left{
+    left: 12px;
+    -webkit-border-radius: 8px 3px 3px 8px;
+    border-radius: 8px 3px 3px 8px;
+    -webkit-box-shadow: -2px 2px 3px rgba(0,0,0,.28);
+    box-shadow: -2px 2px 3px rgba(0,0,0,.28);
+}
+section.view .swiper-container >a.arrow-right{
+    right: 12px;
+    -webkit-border-radius: 3px 8px 8px 3px;
+    border-radius: 3px 8px 8px 3px;
+    -webkit-box-shadow: -2px 2px 3px rgba(0,0,0,.28);
+    box-shadow: 2px 2px 3px rgba(0,0,0,.28);
+}
+.image-text-content .swiper-slide img{
+    height: 100%;
+    width: 100%;
+}
+.focus-container section.preview .swiper-container{
+    width: 100%;
+    height: 64px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+.preview .swiper-slide{
+    width: 100px;
+    height: 64px;
+}
+.preview .swiper-slide:not(:last-child){
+    margin-right: 10px;
+}
 
+/*产品信息区*/
+.image-text-content .p-info-area{
+    width: 635px;
+    height: 400px;
+    right: 15px;
+}
+.p-info-area section.main-info{
+    height: 200px;
+    padding: 10px 15px;
+}
+section.main-info h3.minfo_title{
+    width: 540px;
+    height: 58px;
+    line-height: 58px;
+    overflow: hidden;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+section.main-info h3.minfo_title em{
+    font-size: 14px;
+    color: #fb3e3e;
+    font-weight: 400;
+    margin-left: 5px;
+    display: inline-block;
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+}
+section.main-info .minfo_label{
+    height: 28px;
+    margin-bottom: 15px;
+}
+section.main-info .minfo_label span{
+    width: 84px;
+    height: 28px;
+    line-height: 28px;
+    display: inline-block;
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-indent: 1px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #349039;
+}
+section.main-info .minfo_label span:not(:last-child){
+    margin-right: 8px;
+}
 
+section.main-info .like-block{
+    position: absolute;
+    right: 15px;
+    top: 28px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+section.main-info .like-block i{
+    margin-right: 3px;
+    display: inline-block;
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+    color: #349039;
+}
+section.main-info .minfo_minPrice{
+    position: absolute;
+    right: -3px;
+    top: 94px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    width: 150px;
+    color: #f5f5f5;
+    font-size: 14px;
+    z-index: 2px;
+    background: url(../img/label_bg03.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+section.main-info p.info{
+    line-height: 32px;
+    font-size: 13px;
+}
+section.main-info p.info a{
+    color: #349039;
+    margin-left: 3px;
+}
 
+section.minfo_minPrice span.unit-money{
+    font-size: 28px;
+    margin-right: 4px;
+    display: inline-block;
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+}
+section.minfo_minPrice span.unit-money::before{
+    font-size: 14px;
+    display: inline-block;
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+}
+.p-info-area section.appraise{
+    height: 146px;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+section.appraise .content-inner{
+    background-color: #eaf3f0;
+    height: 130px;
+    padding: 8px 12px;
+}
+section.appraise .score-box{
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 8px;
+}
+section.appraise .score-box span{
+    margin-right: 4px;
+}
+section.appraise .score-box span::after{
+    content: "|";
+    margin-left: 4px;
+}
+section.appraise .score-box span i.iconfont{
+    font-size: 22px;
+    color: #b2b2b2;
+}
+section.appraise .score-box span em{
+    font-size: 18px;
+    color: #fb3e3e;
+}
+section.appraise .score-box a em{
+    color: #fb3e3e;
+}
+section.appraise .appraise-box h4{
+    font-weight: 400;
+    line-height: 25px;
+}
+section.appraise .appraise-box h4 a{
+    margin-right: 3px;
+    color: #349039;
+    font-size: 13px;
+}
+section.appraise .appraise-box p{
+    line-height: 22px;
+}
 
 
 
