@@ -573,6 +573,7 @@ html,body{
 .w1200{
     width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 /*主要内容*/
@@ -827,6 +828,8 @@ html,body{
     width: 250px;
     height: 88px;
 }
+
+/*城市切换*/
 .head-wrap .city-switch{
     width: 110px;
     height: 32px;
@@ -844,7 +847,7 @@ html,body{
 }
 .head-wrap .city-switch em{
     font-size: 15px;
-    color: #313536;
+    color: #545454;
     font-weight: 700;
     font-family: "宋体",Arial,'Microsoft Yahei';
 }
@@ -1093,6 +1096,9 @@ html,body{
     margin: auto;
 
 }
+
+
+/*轮播容器面板*/
 .carousel-panel{
     width: 100%;
     height: 426px;
@@ -2441,6 +2447,7 @@ html,body{
     height: 430px;
     background: #fff;
     position: relative;
+    border: 1px solid #e2e2e2;
 }
 .image-text-content .focus-container{
     width: 525px;
@@ -2520,7 +2527,7 @@ section.main-info h3.minfo_title{
 }
 section.main-info h3.minfo_title em{
     font-size: 14px;
-    color: #fb3e3e;
+    color: #f04a1a;
     font-weight: 400;
     margin-left: 5px;
     display: inline-block;
@@ -2607,9 +2614,12 @@ section.minfo_minPrice span.unit-money::before{
     letter-spacing: 1px;
 }
 section.appraise .content-inner{
-    background-color: #edf5ed;
+    background-color: #f5f5f5;
     height: 130px;
     padding: 8px 12px;
+    border: 1px solid #e2e2e2;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
 }
 section.appraise .score-box{
     height: 42px;
@@ -2631,10 +2641,10 @@ section.appraise .score-box span i.iconfont{
 }
 section.appraise .score-box span em{
     font-size: 18px;
-    color: #fb3e3e;
+    color: #f04a1a;
 }
 section.appraise .score-box a em{
-    color: #fb3e3e;
+    color: #f04a1a;
 }
 section.appraise .appraise-box h4{
     font-weight: 400;
@@ -2653,13 +2663,175 @@ section.appraise .appraise-box p{
 .detail-page-panel .intact-content{
     margin-top: 25px;
 }
-section.intact-content .tab-content-box{
+section.intact-content .tab-content-box,
+section.intact-content .other-content-box{
     min-height: 200px;
     margin-bottom: 25px;
+    border: 1px solid #e2e2e2;
+    background-color: #fff;
+}
+section.intact-content .list-header{
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #e2e2e2;
+}
+section.intact-content .list-header .h-item{
+    width: 135px;
+    text-align: center;
+    height: 48px;
+    font-size: 14px;
+    float: left;
+}
+section.intact-content .list-header .h-item:not(:first-child){
+    border-right: 1px solid #e2e2e2;
+}
+section.intact-content .list-header .h-item.on{
+    height: 46px;
+    line-height: 46px;
+    border-top: 2px solid #349039;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #e2e2e2;
+}
+section.intact-content .list-header .h-item.on i{
+    color: #349039;
+}
+/*动态的内容区*/
+section.intact-content .list-content{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
+}
+section.intact-content .list-content.no-padding{
+    padding: 0;
+}
+section.intact-content .content-innner{
+    width: 1170px;
+}
+section.intact-content .content-innner img{
+    max-width: 100%;
 }
 
-
-
+/*历史浏览*/
+section.intact-content .other-content-box{
+    margin-bottom: 25px;
+    height: 298px;
+    position: relative;
+}
+.other-content-box .box-header{
+    height: 48px;
+    background-color: #fff;
+    border-bottom: 1px solid #e2e2e2;
+}
+.other-content-box .box-header span{
+    width: 135px;
+    height: 48px;
+    line-height: 49px;
+    text-align: center;
+    font-size: 13px;
+    display: inline-block;
+    position: relative;
+}
+.other-content-box .box-header span.on::before{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: #349039;   
+    position: absolute;
+    top: 0; 
+    left: 0;
+}
+.other-content-box .box-header span.on::after{
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid #349039;
+    border-right: 3px solid #349039;
+    -webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    transform-origin: right top;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 2px;
+    margin: auto;
+}
+.other-content-box .box-content{
+    height: 228px;
+    padding: 11px;
+}
+.other-content-box .d_box-layout{
+    width: 1176px;
+    height: 228px;  
+    position: relative;  
+}
+.other-content-box .d_box-layout li {
+    width: 285px;
+    float: left;
+}
+.other-content-box .d_box-layout li:not(:nth-child(4n)) {
+    margin-right: 12px;
+}
+.d_box-layout li .imgWrap{
+    height: 164px;
+}
+.d_box-layout li section.b_content{
+    height: 54px;
+    padding-top: 10px;
+    position: relative;
+}
+.d_box-layout li h4.subtitle{
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+    padding: 0 8px;
+    overflow: hidden;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-family: "宋体",Arial,'Microsoft Yahei';
+    color: #545454;
+}
+.d_box-layout li p.info{
+    margin-top: 4px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    color: #959595;
+    padding:0 8px;
+}
+.d_box-layout li p.info em{
+    color: #f04a1a;
+    margin-right: 2px;
+    font-size: 16px;
+}
+.d_box-layout li span.vital{
+    position: absolute;
+    right: 10px;
+    bottom: 2px;
+    color: #959595;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    letter-spacing: .05em;
+}
+.d_box-layout span.vital em{
+    color: #f04a1a;
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 2px;
+    -webkit-transform: translateY(1px);
+    -moz-transform: translateY(1px);
+    transform: translateY(1px);
+}
+.d_box-layout span.vital .unit-money::before{
+    font-size: 13px;
+}
 
 /* ==========================================================================
    辅助类
