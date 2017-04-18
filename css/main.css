@@ -2823,36 +2823,99 @@ section.appraise .appraise-box p{
 
 /*酒店预订价格信息列表*/
 .hotel-room-tb .tb-search-bar{
-    height: 70px;
+    height: 65px;
     border-bottom: 1px solid #e2e2e2;
+    position: relative;
 }
+.hotel-room-tb .tb-search-bar >*{
+    display: inline-block;
+}
+.tb-search-bar .date-box{
+    width: 568px;
+    height: 40px;
+    left: 15px;
+}
+.tb-search-bar .date-box > *{
+    float: left;
+}
+.tb-search-bar .date-box .input-box{
+    height: 40px;
+    width: 215px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+.tb-search-bar .search-btn{
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    background: #f04a1a;
+    color: #fff;
+    letter-spacing: 5px;
+    text-indent: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+}
+.tb-search-bar .btn-box{
+    left: 580px;
+    width: 590px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+.tb-search-bar .btn-box >*{
+    vertical-align: middle;
+    width: 90px;
+    background: #fff;
+    color: #545454;
+    letter-spacing: 1px;
+    text-indent: 1px;
+    border: 1px solid #e2e2e2;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    height: 32px;
+}
+.tb-search-bar .btn-box >.on{
+    border: 1px solid #f04a1a;
+    background: #f04a1a;
+    color: #f5f5f5;
+}
+.tb-search-bar .btn-box >*:not(:last-child){
+    margin-right: 5px;
+}
+
 .hotel-room-tb .tb-info-list{
     background: #f5f5f5;
 }
+.hotel-room-tb .tb-info-list .tb-item:not(:last-child){
+    border-bottom: 1px solid #e2e2e2;
+}
 .hotel-room-tb .tb-info-list .room-info{
-    height: 110px;
+    height: 135px;
     border-bottom: 1px solid #e2e2e2;
     position: relative;
 }
 .hotel-room-tb .room-info h3{
-    width: 850px;
+    width: 920px;
     height: 48px;
     line-height: 48px;
     font-size: 26px;
     letter-spacing: 2px;
     font-weight: 400;
     position: absolute;
-    top: 20px;
+    top: 28px;
     left: 120px;
+    overflow: hidden;
 }
 .hotel-room-tb .room-info p.room-lable{
-    width: 850px;
+    width: 920px;
     height: 28px;
     line-height: 28px;
-    font-size: 13px;
+    font-size: 14px;
     color: #959595;
     position: absolute;
-    top: 68px;
+    top: 75px;
     left: 120px;
 }
 .hotel-room-tb .room-info p.room-lable >span{
@@ -2865,9 +2928,10 @@ section.appraise .appraise-box p{
 .hotel-room-tb .room-info .rt-info{
     position: absolute;
     top: 0;
-    right: 0;
+    right: 25px;
     width: 150px;
     height: 110px;
+    text-align: center;
 }
 .hotel-room-tb .rt-info span.price{
     height: 38px;
@@ -2875,7 +2939,7 @@ section.appraise .appraise-box p{
     font-size: 14px;
     color: #959595;
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 .hotel-room-tb .rt-info span.price em{
     color: #f04a1a;
@@ -2885,6 +2949,30 @@ section.appraise .appraise-box p{
 .hotel-room-tb .rt-info span.price em::before{
     font-size: 14px;
 }
+.hotel-room-tb .rt-info span.price em::before{
+    font-size: 14px;
+}
+.hotel-room-tb .rt-info p.info{
+    color: #959595;
+    font-size: 14px;
+    line-height: 20px;
+}
+.hotel-room-tb .rt-info .btn{
+    width: 108px;
+    height: 32px;
+    line-height: 32px;
+    background: #f04a1a;
+    color: #fff;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    font-size: 14px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 6px;
+}
+
 .hotel-room-tb .tb-info-list .ref-info{
     background: #fff;
 }
@@ -2924,6 +3012,9 @@ table .tb-btn{
     display: inline-block;
     vertical-align: middle;
 }
+
+
+
 
 /*详情页相关信息*/
 .detail-page-panel .intact-content{
