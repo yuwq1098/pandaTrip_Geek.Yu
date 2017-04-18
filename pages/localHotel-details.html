@@ -393,12 +393,10 @@
                                             <div class="input-box">
                                                 <span class="sign">入住</span>
                                                 <input type="datetime" placeholder="选择入住时间" />
-                                                <em>星期四</em>
                                             </div>
                                             <div class="input-box">
                                                 <span class="sign">离店</span>
                                                 <input type="datetime" placeholder="选择离店时间" />
-                                                <em>星期六</em>
                                             </div>
                                             <input class="search-btn" type="submit" value="搜索"/>
                                         </section><!-- 时间选择容器 -->
@@ -426,7 +424,7 @@
                                                 <section class="rt-info">
                                                     <span class="price"><em class="unit-money">1800</em>起</span>
                                                     <p class="info">共7个产品</p>
-                                                    <a class="btn" data-id="tbInfo">收起价格<i class="iconfont icon-angleup"></i></a><!-- 收起 -->
+                                                    <a class="btn" data-id="tbInfo">收起价格<i class="iconfont icon-angledown"></i></a><!-- 收起 -->
                                                 </section>
                                             </div>
                                             <section class="ref-info">
@@ -478,7 +476,7 @@
                                                 <section class="rt-info">
                                                     <span class="price"><em class="unit-money">1800</em>起</span>
                                                     <p class="info">共7个产品</p>
-                                                    <a class="btn" data-id="tbInfo">收起价格<i class="iconfont icon-angleup"></i></a><!-- 收起 -->
+                                                    <a class="btn" data-id="tbInfo">收起价格<i class="iconfont icon-angledown"></i></a><!-- 收起 -->
                                                 </section>
                                             </div>
                                             <section class="ref-info">
@@ -982,6 +980,33 @@
         <script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
         <!-- 加载熊猫旅行的插件脚本 -->
         <script src="../js/plugins.js"></script>
+
+        <script type="text/javascript">
+            
+            $(function(){
+                
+                // 酒店价格显隐控制
+                var $tbList = $(".tb-info-list");
+                var $tbItem = $tbList.find(".tb-item");
+
+                $tbItem.find("[data-id=tbInfo]").on("click",function(){
+                    var _this = $(this);
+                    var _isOn = _this.hasClass("on");
+                    var _refDom = _this.parents(".room-info").siblings(".ref-info");
+                    if(_isOn){
+                        _this.removeClass("on");
+                        _refDom.hide();
+                    }else{
+                        _this.addClass("on");
+                        _refDom.show();
+                    }
+                    
+
+                })
+
+            });
+
+        </script>
         
     </body>
 </html>

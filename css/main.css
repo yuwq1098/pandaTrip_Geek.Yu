@@ -2711,7 +2711,7 @@ section.appraise .appraise-box p{
 }
 /*当地酒店的图文区*/
 .image-text-content-1{
-    height: 456px;
+    height: 445px;
 }
 .image-text-content-1 .p-header-info{
     height: 70px;
@@ -2762,15 +2762,15 @@ section.appraise .appraise-box p{
 .image-text-content-1 .focus-container,
 .image-text-content-1 .p-info-area{
     top: 100px;
-    height: 340px;
+    height: 320px;
     bottom: auto;
     overflow: hidden;
 }
 .image-text-content-1 .focus-container{
-    width: 570px;
+    width: 595px;
 }
 .image-text-content-1 .p-info-area{
-    width: 585px;
+    width: 560px;
 }
 .image-text-content-1 section.appraise{
     margin-top: 0px;
@@ -2840,10 +2840,27 @@ section.appraise .appraise-box p{
 }
 .tb-search-bar .date-box .input-box{
     height: 40px;
+    line-height: 40px;
     width: 215px;
     box-sizing: border-box;
     border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
 }
+.tb-search-bar .input-box span.sign{
+    position: absolute;
+    left: 8px;
+}
+.tb-search-bar .input-box input{
+    position: absolute;
+    height: 38px;
+    width: 175px;
+    top: 0;
+    border: 0;
+    left: 40px;
+    padding: 0;
+}
+
 .tb-search-bar .search-btn{
     width: 120px;
     height: 40px;
@@ -2972,9 +2989,33 @@ section.appraise .appraise-box p{
     vertical-align: middle;
     margin-top: 6px;
 }
+.hotel-room-tb .rt-info .btn i.iconfont{
+    display: inline-block;
+    -webkit-transform-origin: center 47.5%;
+    -moz-transform-origin: center 47.5%;
+    -o-transform-origin: center 47.5%;
+    transform-origin: center 47.5%;
+
+    -webkit-transition: -webkit-transform .18s cubic-bezier(.05,.2,.6,1);
+    -moz-transition: -moz-transform .18s cubic-bezier(.05,.2,.6,1);
+    -o-transition: -o-transform .18s cubic-bezier(.05,.2,.6,1);
+    transition: transform .18s cubic-bezier(.05,.2,.6,1);
+
+}
+.hotel-room-tb .rt-info .btn.on i.iconfont{
+    -webkit-transform: rotateZ(-180deg);
+    -moz-transform: rotateZ(-180deg);
+    -o-transform: rotateZ(-180deg);
+    transform: rotateZ(-180deg);
+    -webkit-transition: -webkit-transform .25s cubic-bezier(.05,.2,.6,1);
+    -moz-transition: -moz-transform .25s cubic-bezier(.05,.2,.6,1);
+    -o-transition: -o-transform .25s cubic-bezier(.05,.2,.6,1);
+    transition: transform .25s cubic-bezier(.05,.2,.6,1);
+}
 
 .hotel-room-tb .tb-info-list .ref-info{
     background: #fff;
+    display: none;
 }
 .hotel-room-tb .ref-info th{
     height: 54px;
