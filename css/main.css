@@ -2709,6 +2709,70 @@ section.appraise .appraise-box h4 a{
 section.appraise .appraise-box p{
     line-height: 22px;
 }
+/*当地酒店的图文区*/
+.image-text-content-1{
+    height: 456px;
+}
+.image-text-content-1 .p-header-info{
+    height: 70px;
+    padding: 15px;
+}
+.image-text-content-1 h3.minfo_title{
+    height: 42px;
+    line-height: 42px;
+}
+.image-text-content-1 h3.minfo_title p{
+    display: inline-block;
+    font-size: 24px;
+}
+.image-text-content-1 h3.minfo_title span.star-level{
+    margin: 0 8px;
+}
+.image-text-content-1 h3.minfo_title span.star-level i{
+    letter-spacing: -3px;
+}
+.image-text-content-1 h3.minfo_title .like-block{
+    font-weight: 400;
+}
+.image-text-content-1 h3.minfo_title .like-block i{
+    margin-right: 3px;
+    color: #349039;
+}
+.image-text-content-1 .p-header-info p.info{
+    line-height: 28px;
+}
+.image-text-content-1 .p-header-info p.info a{
+    margin-left: 5px;
+    color: #349039;
+}
+.image-text-content-1 .minfo_minPrice{
+    position: absolute;
+    right: -3px;
+    top: 28px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    width: 150px;
+    color: #f5f5f5;
+    font-size: 14px;
+    z-index: 2px;
+    background: url(../img/label_bg03.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+.image-text-content-1 .focus-container,
+.image-text-content-1 .p-info-area{
+    top: 100px;
+    height: 340px;
+    bottom: auto;
+    overflow: hidden;
+    background: #eee;
+}
+.image-text-content-1 .focus-container{
+    width: 570px;
+}
+.image-text-content-1 .p-info-area{
+    width: 585px;
+}
 
 /*详情页相关信息*/
 .detail-page-panel .intact-content{
