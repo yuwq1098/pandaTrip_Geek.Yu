@@ -141,7 +141,6 @@
                                     </section>
                                 </div>
                             </section><!-- 功能支持 -->
-
                         </div>
                     </section><!-- 顶部信息区 -->
                     <section class="header-main w1200-box clearfix">
@@ -226,12 +225,13 @@
                                     <a href="javascript:;">查看<em>2344</em>人点评</a>
                                 </div>
                             </div><!-- 导游的信息区 -->
-                            <div class="tour-img">
-                                <section class="mView">
-                                    <a href="javascript:;" class="line_icon datu_prev">
+                            
+                            <div class="tour-img" id="tour_ban">
+                                <section class="mView" id="ban_pic">
+                                    <a href="javascript:;" class="line_icon datu_prev" id="prev1">
                                         <i class="iconfont icon-back"></i>
                                     </a>
-                                    <a href="javascript:;" class="line_icon datu_next">
+                                    <a href="javascript:;" class="line_icon datu_next" id="next1">
                                         <i class="iconfont icon-right"></i>
                                     </a>
                                     <div class="datu">
@@ -246,18 +246,18 @@
                                     </div>
                                 </section>
                                 <section class="pView">
-                                    <div class="xtu">
+                                    <div class="xtu" id="ban_num1">
                                         <ul class="clearfix">
                                             <li><img width="150" height="88" src="../img/hotel-details01.jpg"/></li>
                                             <li><img width="150" height="88" src="../img/hotel-details02.jpg"/></li>
                                             <li><img width="150" height="88" src="../img/hotel-details03.jpg"/></li>
                                             <li><img width="150" height="88" src="../img/hotel-details04.jpg"/></li>
                                             <li><img width="150" height="88" src="../img/hotel-details05.jpg"/></li>
-                                            <li><img width="150" height="88" src="../img/hotel-details06.jpg"/></li>
+                                            <li><img width="150" height="88" src="../img/hotel-details01.jpg"/></li>
                                         </ul>
                                     </div>
-                                    <span class="p_prev"><i class="iconfont icon-back"></i></span>
-                                    <span class="p_next"><i class="iconfont icon-right"></i></span>
+                                    <span class="p_prev" id="prev_btn1"><i class="iconfont icon-back"></i></span>
+                                    <span class="p_next" id="next_btn1"><i class="iconfont icon-right"></i></span>
                                 </section>
                             </div><!-- 导游的轮播图 -->
                             
@@ -714,13 +714,29 @@
         <!-- 用cdn引入jq，当cdn不稳定时，使用本地的jq -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
-        
+
+
         <!-- 引入懒加载插件 -->
         <script src="../js/vendor/lazyload.min.js"></script>
-        <!-- 引入轮播图插件 -->
-        <script src="../js/vendor/swiper/swiper.jquery.min.js"></script>
         <!-- 加载熊猫旅行的插件脚本 -->
         <script src="../js/plugins.js"></script>
+        
+        <script type="text/javascript">
+            $('#tour_ban').banqh({
+                box:"#tour_ban",//总框架
+                pic:"#ban_pic",//大图框架
+                pnum:"#ban_num1",//小图框架
+                prev_btn:"#prev_btn1",//小图左箭头
+                next_btn:"#next_btn1",//小图右箭头
+                prev:"#prev1",//大图左箭头
+                next:"#next1",//大图右箭头
+                delayTime:400,//切换一张图片时间
+                order:0,//当前显示的图片（从0开始）
+                picdire:true,//大图滚动方向（true为水平方向滚动）
+                mindire:true,//小图滚动方向（true为水平方向滚动）
+                min_picnum:4,//小图显示数量
+            });
+        </script>
         
     </body>
 </html>

@@ -3042,12 +3042,14 @@ section.appraise .appraise-box p{
     position: relative;
     overflow: hidden;
 }
+.tour-img .mView ul{ 
+    position:absolute; 
+    left:0; 
+    top:0;
+}
 .tour-img .mView ul li{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 754px;
+    height: 450;
 }
 
 .imgtex-box .tour-img .pView{
@@ -3074,6 +3076,19 @@ section.appraise .appraise-box p{
 .tour-img .pView div.xtu ul li{
     float: left;
     margin-right: 12px;
+    position: relative;
+    cursor: pointer;
+}
+.tour-img .pView div.xtu ul li.on::after{
+    content: "";
+    display: block;
+    width: 144px;
+    height: 82px;
+    border: 3px solid #e45;
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 9;
 }
 .tour-img .pView span.p_prev,
 .tour-img .pView span.p_next{
@@ -3696,6 +3711,86 @@ table.tb_info tbody td.lt_buy .buy-btn:hover,
 table.tb_info tbody td.lt_buy .buy-btn:active{
     background: #fd5f31;
 }
+
+/*设施服务*/
+.list-attr-con .attr-item{
+    min-height: 38px;
+    line-height: 38px;
+    position: relative;
+    padding-left: 108px;
+}
+.list-attr-con > div:not(:last-child){
+    margin-bottom: 10px;
+}
+.list-attr-con .attr-item .i_attr{
+   width: 92px;
+   font-size: 14px;
+   letter-spacing: 1px;
+   color: #b2b2b2;
+   position: absolute;
+   left: 10px;
+   top: 0;
+}
+.list-attr-con .attr-item .i_con{
+    line-height: 24px;
+    padding: 6px 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.list-attr-con .attr-item-1{
+    height: 72px;
+    position: relative;
+    padding-left: 108px;
+}
+.list-attr-con .attr-item-1 .i_attr{
+    line-height: 72px; 
+    width: 92px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #b2b2b2;
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+.attr-item-1 .serve_ul{
+    height: 56px;
+    padding: 8px 0; 
+}
+.attr-item-1 .serve_ul li{
+    width: 75px;
+    float: left;
+    margin-right: 12px;
+    text-align: center;
+}
+.attr-item-1 .serve_ul li i.iconfont{
+    line-height: 30px;
+    font-size: 24px;
+}
+.attr-item-1 .serve_ul li p{
+    line-height: 20px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-indent: 2px;
+}
+.attr-item-1 .serve_ul li.s_wifi i.iconfont{
+    color: #37bc9b;
+}
+.attr-item-1 .serve_ul li.s_kd i.iconfont{
+    color: #37bc9b;
+}
+.attr-item-1 .serve_ul li.s_jsf i.iconfont{
+    color: #f7bf50;
+}
+.attr-item-1 .serve_ul li.s_sw i.iconfont{
+    color: #4a89dc;
+}
+.attr-item-1 .serve_ul li.s_hys i.iconfont{
+    color: #3eafda;
+}
+.attr-item-1 .serve_ul li.s_ct i.iconfont{
+    color: #e9573f;
+}
+
 
 /*游客点评*/
 .rating-info-content{

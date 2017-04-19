@@ -537,4 +537,134 @@
 
     };
 
+    // 双向焦点图
+    $.fn.banqh = function(option){
+        var setting = $.extend({
+                box:null,//总框架
+                pic:null,//大图框架
+                pnum:null,//小图框架
+                prev_btn:null,//小图左箭头
+                next_btn:null,//小图右箭头
+                prev:null,//大图左箭头
+                next:null,//大图右箭头
+                pop_prev:null,//弹出框左箭头
+                pop_next:null,//弹出框右箭头
+                autoplay:false,//是否自动播放
+                interTime:5000,//图片自动切换间隔
+                delayTime:800,//切换一张图片时间
+                pop_delayTime:800,//弹出框切换一张图片时间
+                order:0,//当前显示的图片（从0开始）
+                picdire:true,//大图滚动方向（true水平方向滚动）
+                mindire:true,//小图滚动方向（true水平方向滚动）
+                min_picnum:null,//小图显示数量
+                pop_up:false,//大图是否有弹出框
+                pop_div:null,//弹出框框架
+                pop_pic:null,//弹出框图片框架
+                pop_xx:null,//关闭弹出框按钮
+                mhc:null//遮罩层
+            }, option || {});
+
+        var picnum = $(setting.pic).find('ul li').length;
+        var picw = $(setting.pic).find('ul li').outerWidth(true);
+        var pich = $(setting.pic).find('ul li').outerHeight(true);
+        var poppicw = $(setting.pop_pic).find('ul li').outerWidth(true);
+        var picminnum = $(setting.pnum).find('ul li').length;
+        var picpopnum = $(setting.pop_pic).find('ul li').length;
+        var picminw = $(setting.pnum).find('ul li').outerWidth(true);
+        var picminh = $(setting.pnum).find('ul li').outerHeight(true);
+        var pictime;
+        var tpqhnum=0;
+        var xtqhnum=0;
+        var popnum=0;
+
+        // 给对应容器指定的宽度
+        $(setting.pic).find('ul').width(picnum*picw).height(picnum*pich);
+        $(setting.pnum).find('ul').width(picminnum*picminw).height(picminnum*picminh);
+        $(setting.pop_pic).find('ul').width(picpopnum*poppicw);
+        
+        // 初始化加载某张图片
+        show(setting.order);
+        minshow(setting.order);  
+        
+        //点击小图切换大图
+        $(setting.pnum).find('li').click(function () {
+            tpqhnum = xtqhnum = $(setting.pnum).find('li').index(this);
+            show(tpqhnum);
+            minshow(xtqhnum);
+        });
+
+        //小图左右切换            
+        $(setting.prev_btn).click(function(){
+            if(tpqhnum==0){tpqhnum=picnum};
+            if(xtqhnum==0){xtqhnum=picnum};
+            xtqhnum--;
+            tpqhnum--;
+            show(tpqhnum);
+            minshow(xtqhnum);   
+        })
+        $(setting.next_btn).click(function(){
+            if(tpqhnum==picnum-1){tpqhnum=-1};
+            if(xtqhnum==picminnum-1){xtqhnum=-1};
+            xtqhnum++;
+            minshow(xtqhnum)
+            tpqhnum++;
+            show(tpqhnum);
+        })  
+
+        //大图左右切换    
+        $(setting.prev).click(function(){
+            if(tpqhnum==0){tpqhnum=picnum};
+            if(xtqhnum==0){xtqhnum=picnum};
+            xtqhnum--;
+            tpqhnum--;
+            show(tpqhnum);
+            minshow(xtqhnum);   
+        })
+        $(setting.next).click(function(){
+            if(tpqhnum==picnum-1){tpqhnum=-1};
+            if(xtqhnum==picminnum-1){xtqhnum=-1};
+            xtqhnum++;
+            minshow(xtqhnum)
+            tpqhnum++;
+            show(tpqhnum);
+        })
+        
+        //小图切换过程
+        function minshow(xtqhnum){
+            var mingdjl_num =xtqhnum-setting.min_picnum+2;
+            var mingdjl_w=-mingdjl_num*picminw;
+            var mingdjl_h=-mingdjl_num*picminh;
+            
+            if(setting.mindire==true){
+                $(setting.pnum).find('ul li').css('float','left');
+                if(picminnum>setting.min_picnum){
+                    if(xtqhnum<4){mingdjl_w=0;}
+                    if(xtqhnum==picminnum-1){mingdjl_w=-(mingdjl_num-1)*picminw;}
+                    $(setting.pnum).find('ul').stop().animate({'left':mingdjl_w},setting.delayTime);
+                    }
+            }else{
+                $(setting.pnum).find('ul li').css('float','none');
+                if(picminnum>setting.min_picnum){
+                    if(xtqhnum<4){mingdjl_h=0;}
+                    if(xtqhnum==picminnum-1){mingdjl_h=-(mingdjl_num-1)*picminh;}
+                    $(setting.pnum).find('ul').stop().animate({'top':mingdjl_h},setting.delayTime);
+                    }
+                }
+        }
+
+        //大图切换过程
+        function show(tpqhnum){
+            var gdjl_w=-tpqhnum*picw;
+            var gdjl_h=-tpqhnum*pich;
+            if(setting.picdire==true){
+                $(setting.pic).find('ul li').css('float','left');
+                $(setting.pic).find('ul').stop().animate({'left':gdjl_w},setting.delayTime);
+            }else{
+                $(setting.pic).find('ul').stop().animate({'top':gdjl_h},setting.delayTime);
+            }//滚动
+            $(setting.pnum).find('li').eq(tpqhnum).addClass("on").siblings(this).removeClass("on");
+        };
+        
+    };
+
 })(jQuery); 
