@@ -2453,6 +2453,7 @@ html,body{
     background: #fff;
     position: relative;
     border: 1px solid #e2e2e2;
+    margin-bottom: 25px;
 }
 .image-text-content .focus-container{
     width: 525px;
@@ -2945,6 +2946,222 @@ section.appraise .appraise-box p{
     left: 15px;
 }
 
+/*导游图文区补充*/
+.content-panel .imgtex-box{
+    height: 940px;
+    background: #fff;
+    margin-bottom: 25px;
+    position: relative;
+}
+.imgtex-box .tour-info{
+    width: 740px;
+    height: 336px;
+    position: relative;
+    padding: 15px 25px;
+}
+.imgtex-box .tour-info h3{
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+}
+.imgtex-box .tour-info h3 p{
+    display: inline-block;
+    font-size: 22px;
+    letter-spacing: 2px;
+    max-width: 580px;
+}
+.imgtex-box .tour-info h3 .like-block{
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 12px;
+}
+.imgtex-box .tour-info h3 .like-block i{
+    margin-right: 4px;
+    color: #349039;
+}
+.imgtex-box .tour-info .attr-list{
+    width: 420px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+.imgtex-box .tour-info .attr-list >div{
+    width: 170px;
+    line-height: 28px;
+    height: 28px;
+    float: left;
+}
+.imgtex-box .tour-info .attr-list >div:nth-child(2n){
+    width: 200px;
+    margin-left: 20px;
+}
+.imgtex-box .tour-info div.sign{
+    position: relative;
+    line-height: 25px;
+    max-height: 100px;
+    overflow: hidden;
+    padding-left: 45px;
+    margin: 20px 0 25px;
+}
+.imgtex-box .tour-info div.sign .p_title{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+}
+.imgtex-box .tour-info div.grade{
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+.tour-info div.grade span{
+    margin-right: 4px;
+}
+.tour-info div.grade span em {
+    font-size: 18px;
+    color: #f04a1a;
+    margin-right: 4px;
+}
+.tour-info div.grade span::after {
+    content: "|";
+    margin-left: 6px;
+    color: #959595;
+}
+.tour-info div.grade a em{
+    color: #f04a1a;
+}
+/*导游的轮播图*/
+.imgtex-box .tour-img{
+    height: 550px;
+    padding: 10px 20px;
+    position: relative;
+}
+.imgtex-box .tour-img .mView{
+    width: 100%;
+    height: 450px;
+    background: #e2e2e2;
+    position: relative;
+    overflow: hidden;
+}
+.tour-img .mView ul li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imgtex-box .tour-img .pView{
+    width: 100%;
+    height: 88px;
+    margin-top: 10px;
+    position: relative;
+}
+.tour-img .pView div.xtu{
+    width: 636px;
+    height: 88px;
+    background: #e2e2e2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto
+}
+.tour-img .pView div.xtu ul{
+    width: 10000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.tour-img .pView div.xtu ul li{
+    float: left;
+    margin-right: 12px;
+}
+.tour-img .pView span.p_prev,
+.tour-img .pView span.p_next{
+    width: 58px;
+    height: 88px;
+    line-height: 88px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+.tour-img .pView span.p_prev i,
+.tour-img .pView span.p_next i{
+    font-size: 28px;
+    color: #959595;
+    cursor: pointer;
+}
+.tour-img .pView span.p_prev{
+    left: 0;
+}
+.tour-img .pView span.p_next{
+    right: 0;
+}
+
+
+.fr-tour-list{
+    width: 380px;
+    height: 1033px;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    overflow: hidden;
+}
+.fr-tour-list .tour-item{
+    width: 354px;
+    height: 310px;
+    padding: 13px;
+    background: #fff;
+    margin-bottom: 12px;
+}
+.fr-tour-list .tour-item .img-wrap{
+    width: 100%;
+    height: 220px;
+}
+.fr-tour-list .tour-item .img-wrap img{
+    width: 100%;
+    height: 100%;
+}
+.fr-tour-list .tour-item .info{
+    line-height: 48px;
+    height: 48px;
+    position: relative;
+}
+.fr-tour-list .tour-item .info p{
+    padding-right: 70px;
+    text-indent: 3px;
+    color: #545454;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.fr-tour-list .tour-item .info span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    color: #959595;
+}
+.fr-tour-list .tour-item .info span em{
+    font-size: 18px;
+    color: #f04a1a;
+    margin-right: 3px;
+}
+.fr-tour-list .tour-item a.btn{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-indent: 4px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
+    background: #f04a1a;
+}
+
+
 /*酒店预订价格信息列表*/
 .hotel-room-tb .tb-search-bar{
     height: 65px;
@@ -3177,8 +3394,6 @@ table .tb-btn{
     display: inline-block;
     vertical-align: middle;
 }
-
-
 
 
 /*详情页相关信息*/
