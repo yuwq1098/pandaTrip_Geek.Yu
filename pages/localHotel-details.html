@@ -16,7 +16,7 @@
         <!-- Modernizr使支持HTML5和CSS3的浏览器可以充分利用HTML5和CSS3的特性进行开发，同时又不会牺牲其他不支持这些新技术的浏览器的控制。 -->
         <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body class="user-unselect">
         <!--[if lte IE 9]>
             <p class="browserupgrade">您的浏览器版本 <strong>过于老旧</strong>。  请 <a href="http://browsehappy.com/">更新您的浏览器版本</a> 以获得最佳的体验。</p>
         <![endif]-->
@@ -222,22 +222,22 @@
                             </section>
                             
                             <!-- 图片切换模式 - - 开始 -->
-                            <div class="ticket_img_scroll vertical-layout clearfix">
-                                <div class="datu pull-left">
+                            <div class="ticket_img_scroll vertical-layout clearfix" id="tour_ban">
+                                <div class="datu pull-left" id="ban_pic">
                                     
-                                    <a href="javascript:;" class="line_icon datu_prev">
+                                    <a href="javascript:;" class="line_icon datu_prev" id="prev1">
                                         <i class="iconfont icon-back"></i>
                                     </a>
-                                    <a href="javascript:;" class="line_icon datu_next">
+                                    <a href="javascript:;" class="line_icon datu_next" id="next1">
                                         <i class="iconfont icon-right"></i>
                                     </a>
                                     <ul class="pic_mod_ul">
-                                        <li><img src="../img/hotel-details01.jpg" width="462" height="308"></li>
-                                        <li style="display: none;"><img src="../img/hotel-details02.jpg" width="462" height="308"></li>
-                                        <li style="display: none;"><img src="../img/hotel-details03.jpg" width="462" height="308"></li>
-                                        <li style="display: none;"><img src="../img/hotel-details04.jpg" width="462" height="308"></li>
-                                        <li style="display: none;"><img src="../img/hotel-details05.jpg" width="462" height="308"></li>
-                                        <li style="display: none;"><img src="../img/hotel-details06.jpg" width="462" height="308"></li>
+                                        <li><img src="../img/hotel-details01.jpg" width="458" height="308"></li>
+                                        <li><img src="../img/hotel-details02.jpg" width="458" height="308"></li>
+                                        <li><img src="../img/hotel-details03.jpg" width="458" height="308"></li>
+                                        <li><img src="../img/hotel-details04.jpg" width="458" height="308"></li>
+                                        <li><img src="../img/hotel-details05.jpg" width="458" height="308"></li>
+                                        <li><img src="../img/hotel-details01.jpg" width="458" height="308"></li>
                                     </ul>
                                     <section class="tu-info">
                                         <a href="javascript:;" class="on">所有(55)</a>
@@ -248,27 +248,18 @@
                                     </section>
 
                                 </div>
-                                <div class="xtu pull-right" style="height: 271px;">
-                                    <dl class="pic_tab_dl" style="width: 95px; top: 0px;">
-                                    
-                                    
-                                        <dd class="current"><img width="95" height="64" src="../img/hotel-details01.jpg">
-                                        <div class="ticket_meng"></div>
-                                        </dd>
-                                        <dd><img width="95" height="64" src="../img/hotel-details02.jpg">
-                                        </dd>
-                                        <dd><img width="95" height="64" src="../img/hotel-details03.jpg">
-                                        </dd>
-                                        <dd><img width="95" height="64" src="../img/hotel-details04.jpg">
-                                        </dd>
-                                        <dd><img width="95" height="64" src="../img/hotel-details05.jpg">
-                                        </dd>
-                                        <dd><img width="95" height="64" src="../img/hotel-details06.jpg">
-                                        </dd>
-                                    <dt style="top: 0px;"></dt></dl>
+                                <div class="xtu pull-right vertical-xtu" style="height: 271px;" id="ban_num1">
+                                    <ul>
+                                        <li><img width="95" height="64" src="../img/hotel-details01.jpg"/></li>
+                                        <li><img width="95" height="64" src="../img/hotel-details02.jpg"/></li>
+                                        <li><img width="95" height="64" src="../img/hotel-details03.jpg"/></li>
+                                        <li><img width="95" height="64" src="../img/hotel-details04.jpg"/></li>
+                                        <li><img width="95" height="64" src="../img/hotel-details05.jpg"/></li>
+                                        <li><img width="95" height="64" src="../img/hotel-details01.jpg"/></li>
+                                    </ul>
                                 </div>
-                                <span class="pic_left"><i class="iconfont icon-rounddown"></i></span>
-                                <span class="pic_right"><i class="iconfont icon-roundtop"></i></span>
+                                <span class="pic_left" id="prev_btn1"><i class="iconfont icon-roundtop"></i></span>
+                                <span class="pic_right" id="next_btn1"><i class="iconfont icon-rounddown"></i></span>
                             </div> <!-- 图片切换模式 - - 结束 -->
 
                             <div class="p-info-area vertical-layout">
@@ -1027,8 +1018,23 @@
                         _this.addClass("on");
                         _refDom.show();
                     }
+                });
 
-                })
+                // 酒店双向控制轮播图效果
+                $('#tour_ban').banqh({
+                    box:"#tour_ban",//总框架
+                    pic:"#ban_pic",//大图框架
+                    pnum:"#ban_num1",//小图框架
+                    prev_btn:"#prev_btn1",//小图左箭头
+                    next_btn:"#next_btn1",//小图右箭头
+                    prev:"#prev1",//大图左箭头
+                    next:"#next1",//大图右箭头
+                    delayTime:400,//切换一张图片时间
+                    order:0,//当前显示的图片（从0开始）
+                    picdire:true,//大图滚动方向（true为水平方向滚动）
+                    mindire:false,//小图滚动方向（true为水平方向滚动
+                    min_picnum:4,//小图显示数量
+                });
 
             });
 

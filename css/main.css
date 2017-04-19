@@ -2776,6 +2776,7 @@ section.appraise .appraise-box p{
     overflow: hidden;
 }
 
+
 /*当地酒店的详情页轮播图*/
 .ticket_img_scroll{
     width: 562px;
@@ -2783,18 +2784,21 @@ section.appraise .appraise-box p{
     height: 308px;
     bottom: auto;
     left: 15px;
-    overflow: hidden;
 }
 .datu{
     position: relative;
+    width: 458px;
+    height: 308px;
+    overflow: hidden;
 }
 .pic_mod_ul {
-    width: 462px;
     height: 308px;
-    position: relative;
     overflow: hidden;
     cursor: pointer;
     color: #ededed;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .datu_prev, .datu_next {
     display: block;
@@ -2841,20 +2845,21 @@ section.appraise .appraise-box p{
     color: #349039;
 }
 
-.xtu {
+.vertical-xtu{
     width: 95px;
     height: 271px;
     overflow: hidden;
     position: relative;
+    padding-left: 4px;
 }
-.pic_tab_dl {
+.vertical-xtu ul {
     height: 308px;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 4px;
     color: #eee;
 }
-.pic_tab_dl dd {
+.vertical-xtu ul li{
     width: 95px;
     height: 64px;
     margin-bottom: 5px;
@@ -2862,6 +2867,39 @@ section.appraise .appraise-box p{
     position: relative;
     background: url(../img/loading_img.jpg) no-repeat center;
     background-size: 100% 100%;
+}
+.vertical-xtu ul li.on:after{
+    content: "";
+    display: block;
+    height: 61px;
+    width: 91px;
+    border: 2px solid #349039;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.vertical-xtu ul li.on:before{
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 3px solid #349039;
+    border-left: 3px solid #349039;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
 }
 .pic_left,
 .pic_right{
@@ -2894,6 +2932,7 @@ section.appraise .appraise-box p{
 }
 
 
+/*当地酒店图文详情信息区*/
 .image-text-content-1 .p-info-area{
     width: 592px;
 }

@@ -648,8 +648,8 @@
                     if(xtqhnum<4){mingdjl_h=0;}
                     if(xtqhnum==picminnum-1){mingdjl_h=-(mingdjl_num-1)*picminh;}
                     $(setting.pnum).find('ul').stop().animate({'top':mingdjl_h},setting.delayTime);
-                    }
                 }
+            }
         }
 
         //大图切换过程
