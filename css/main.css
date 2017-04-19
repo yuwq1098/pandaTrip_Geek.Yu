@@ -380,11 +380,16 @@ button{
 button,input{ 
     outline: none; 
 }
+body, div, dl, dt, dd, ol, ul, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, tr, th, td, hr, menu {
+    margin: 0;
+    padding: 0;
+}
 ul,li{
     margin: 0; 
     padding: 0; 
     list-style: none;
 }
+
 section,div,span,em,i,p,h1,h2,h3,h4,h5,h6{
     cursor: default;
 }
@@ -2709,9 +2714,11 @@ section.appraise .appraise-box h4 a{
 section.appraise .appraise-box p{
     line-height: 22px;
 }
+
+
 /*当地酒店的图文区*/
 .image-text-content-1{
-    height: 445px;
+    height: 425px;
 }
 .image-text-content-1 .p-header-info{
     height: 70px;
@@ -2730,6 +2737,7 @@ section.appraise .appraise-box p{
 }
 .image-text-content-1 h3.minfo_title span.star-level i{
     letter-spacing: -3px;
+    color: #f04a1a;
 }
 .image-text-content-1 h3.minfo_title .like-block{
     font-weight: 400;
@@ -2762,15 +2770,75 @@ section.appraise .appraise-box p{
 .image-text-content-1 .focus-container,
 .image-text-content-1 .p-info-area{
     top: 100px;
-    height: 320px;
+    height: 308px;
     bottom: auto;
     overflow: hidden;
 }
-.image-text-content-1 .focus-container{
-    width: 595px;
+.ticket_img_scroll{
+    width: 562px;
+    top: 100px;
+    height: 308px;
+    bottom: auto;
+    left: 15px;
+    overflow: hidden;
 }
+.datu{
+    position: relative;
+}
+.pic_mod_ul {
+    width: 462px;
+    height: 308px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    color: #ededed;
+}
+.xtu {
+    width: 95px;
+    height: 271px;
+    overflow: hidden;
+    position: relative;
+}
+.pic_tab_dl {
+    height: 308px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #eee;
+}
+.pic_tab_dl dd {
+    width: 95px;
+    height: 64px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    background: url(../img/loading_img.jpg) no-repeat center;
+    background-size: 100% 100%;
+}
+.pic_left {
+    width: 28px;
+    height: 28px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    left: 475px;
+    top: 278px;
+    background: #f00;
+}
+.pic_right {
+    width: 28px;
+    height: 28px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    left: 523px;
+    top: 278px;
+}
+
+
+
 .image-text-content-1 .p-info-area{
-    width: 560px;
+    width: 592px;
 }
 .image-text-content-1 section.appraise{
     margin-top: 0px;
