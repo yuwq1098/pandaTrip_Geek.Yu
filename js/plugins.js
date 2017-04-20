@@ -372,25 +372,20 @@
         $surface = $el.find(".dropdown-surface");
         
         arrow = $surface.find("i");
-        var opened = true;
+        var opened = false;
 
         var $entityDOM = $("."+defaults.entityClass);
         $entityDOM.css({
             width: setting.width,
         })
         
+        // 点击触发展开ul的Dom
         $surface.on("click",function(){
-            if(!innerDOM) return false;
-            if(opened){
-                arrow.addClass("active");
-            }else{
-                arrow.removeClass("active");
-            }   
-            $entityDOM.slideToggle(300,function(){
-                opened = !opened;
-            }); 
+            // 调用显示的方法
+            show();
         });
         
+        // 点击生成的的li
         var $entityDOM_li = $entityDOM.find("li");
         $entityDOM_li.on("click",function(){
             var $this = $(this);
@@ -399,15 +394,58 @@
             
             $surface.find("em").text(_text);
             $surface.attr("value",_value);
+            // 调用隐藏的方法
+            hide();
+        });
+
+        // 点击空白处关闭模态窗的方法
+        // $(document).mouseup(function(e){
+        //     var _con = $entityDOM;
+        //     if(!_con.is(e.target) && _con.has(e.target).length === 0){
+        //         // 调用隐藏的方法
+        //         hide();
+        //     }
+        // });
+
+        // 显示
+        function show(){
+            if(!innerDOM) return false;
             if(opened){
                 arrow.addClass("active");
             }else{
                 arrow.removeClass("active");
             }   
             $entityDOM.slideToggle(300,function(){
-                opened = !opened;
+                opened = true;
             }); 
-        });
+            $(document).unbind("mouseup",cOutside);
+            $(document).bind("mouseup",cOutside);
+        }
+        // 隐藏
+        function hide(){
+            if(opened){
+                arrow.addClass("active");
+            }else{
+                arrow.removeClass("active");
+            }   
+            $entityDOM.slideToggle(300,function(){
+                opened = false;
+            }); 
+            $(document).unbind("mouseup",cOutside);
+        }
+
+        //点击空白处关闭模态窗的方法
+        function cOutside(e){
+            var _con = $surface;
+            var _con1 = $entityDOM;
+            var condition = !_con.is(e.target) && _con.has(e.target).length === 0 &&
+                      !_con1.is(e.target) && _con1.has(e.target).length === 0;
+
+            if(condition){
+                // 调用隐藏的方法
+                hide(); 
+            }
+        }
         
 
     }; 
@@ -536,6 +574,111 @@
         }
 
     };
+
+    // 顶部城市选择
+    $.fn.citySwitch = function(option){
+        var setting = $.extend({
+                box:null,//切换的按钮
+                refbox:null,//切换显隐的盒子
+                reflinkFunc: null,//城市切换触发的方法
+            }, option || {});
+
+        var $box = $(setting.box);
+        var $refbox = $(setting.refbox);
+        
+        var refopen = false;
+        
+        // 触发站点切换
+        $box.on("click",function(e){
+            //阻止事件冒泡
+            e.stopPropagation();
+            if(!refopen){
+                show();
+            }else{
+                hide();
+            }  
+        })
+
+        //城市选择
+        $refbox.find("a").on("click",function(){
+            var _dataWebid = $(this).attr("data-id");
+            var _dataName = $(this).html();
+            $box.attr("data-id",_dataWebid);
+            $box.find("em").html(_dataName);
+            hide();
+            // 如果用户定义了自己的回调，那么就执行用户的
+            setting.reflinkFunc?setting.reflinkFunc():null;
+        })
+
+        // 显示的方法
+        function show(){
+            $refbox.show();
+            refopen = true;
+            $(document).unbind("mouseup",cOutside);
+            $(document).bind("mouseup",cOutside);
+        }
+        // 隐藏的方法
+        function hide(){
+            $refbox.hide();
+            refopen = false;
+            $(document).unbind("mouseup",cOutside);
+        }
+        //点击空白处关闭模态窗的方法
+        function cOutside(e){
+            var _con = $refbox;
+            var _con1 = $box;
+            var condition = !_con.is(e.target) && _con.has(e.target).length === 0 &&
+                      !_con1.is(e.target) && _con1.has(e.target).length === 0;
+
+            if(condition){
+                // 调用隐藏的方法
+                hide(); 
+            }
+        }
+        
+        //点击空白处关闭模态窗的方法
+        // $.cOutside({
+        //     con:[setting.refbox],//模态框
+        //     call:hide,//回调函数
+        // })
+
+    };
+
+    // 点击空白处关闭模态窗的方法
+    // $.cOutside = function(option){
+    //     var setting = $.extend({
+    //             con:null,//模态窗
+    //             call:null,//回调函数
+    //         }, option || {});
+        
+    //     // 如果没有传入DOM,就退出
+    //     if(!setting.con) return false;
+        
+    //     var _con,isObj = typeof setting.con == "object";
+    //     if(!isObj){
+    //         _con = setting.con?$(setting.con):null;   // 设置目标区域
+    //     }
+    //     //释放点击事件 ，判断用户是否点击模态窗外|| 是的话关闭模态窗
+    //     $(document).mouseup(function(e){
+            
+    //         // 当用户指定一个DOM对象时
+    //         if(!isObj&&!_con.is(e.target) && _con.has(e.target).length === 0){
+    //             // 执行用户的回调
+    //             setting.call?setting.call():null;
+    //         }
+    //         // 当用户以数组的形式指定多个DOM对象时
+    //         if(isObj&&setting.con.length > 0){
+    //             var bol = true;
+    //             for(var i = 0; i<setting.con.length; i++){
+    //                 bol = bol&&!$(setting.con[i]).is(e.target) && $(setting.con[i]).has(e.target).length === 0;
+    //             }
+    //             // 执行用户的回调
+    //             if(bol){setting.call?setting.call():null;}
+    //         }
+
+    //     });
+
+    // }
 
     // 双向焦点图
     $.fn.banqh = function(option){

@@ -41,6 +41,16 @@ $.dropDown({
 	width: "200px",
 });
 
+// 顶部城市选择
+$("#city-switch").citySwitch({
+	box:"#city-switch",//切换的按钮
+    refbox:"#city-switch-box",//切换显隐的盒子
+    // 定义切换站点的回调方法，比如切换整个页面内容，或者刷新页面
+    reflinkFunc: function(){
+    	console.log("我的函数");
+    }
+});
+
 // 功能导航区域切换调用
 $("#nav-func").navFunc();
 
