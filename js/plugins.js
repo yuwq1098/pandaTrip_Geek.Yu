@@ -398,15 +398,6 @@
             hide();
         });
 
-        // 点击空白处关闭模态窗的方法
-        // $(document).mouseup(function(e){
-        //     var _con = $entityDOM;
-        //     if(!_con.is(e.target) && _con.has(e.target).length === 0){
-        //         // 调用隐藏的方法
-        //         hide();
-        //     }
-        // });
-
         // 显示
         function show(){
             if(!innerDOM) return false;
