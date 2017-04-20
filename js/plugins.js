@@ -635,50 +635,7 @@
                 hide(); 
             }
         }
-        
-        //点击空白处关闭模态窗的方法
-        // $.cOutside({
-        //     con:[setting.refbox],//模态框
-        //     call:hide,//回调函数
-        // })
-
     };
-
-    // 点击空白处关闭模态窗的方法
-    // $.cOutside = function(option){
-    //     var setting = $.extend({
-    //             con:null,//模态窗
-    //             call:null,//回调函数
-    //         }, option || {});
-        
-    //     // 如果没有传入DOM,就退出
-    //     if(!setting.con) return false;
-        
-    //     var _con,isObj = typeof setting.con == "object";
-    //     if(!isObj){
-    //         _con = setting.con?$(setting.con):null;   // 设置目标区域
-    //     }
-    //     //释放点击事件 ，判断用户是否点击模态窗外|| 是的话关闭模态窗
-    //     $(document).mouseup(function(e){
-            
-    //         // 当用户指定一个DOM对象时
-    //         if(!isObj&&!_con.is(e.target) && _con.has(e.target).length === 0){
-    //             // 执行用户的回调
-    //             setting.call?setting.call():null;
-    //         }
-    //         // 当用户以数组的形式指定多个DOM对象时
-    //         if(isObj&&setting.con.length > 0){
-    //             var bol = true;
-    //             for(var i = 0; i<setting.con.length; i++){
-    //                 bol = bol&&!$(setting.con[i]).is(e.target) && $(setting.con[i]).has(e.target).length === 0;
-    //             }
-    //             // 执行用户的回调
-    //             if(bol){setting.call?setting.call():null;}
-    //         }
-
-    //     });
-
-    // }
 
     // 双向焦点图
     $.fn.banqh = function(option){
